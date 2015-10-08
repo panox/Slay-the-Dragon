@@ -1,0 +1,27 @@
+//create an object prototype Character with 
+  properties: name, health 
+  method: attack (enemyName, minAtk, maxAtk) {
+    atk = random number generated between minAtk and maxAtk
+    substruct atk from enemyName.health
+  }
+//create 2 instances of prototype Character
+  hero {
+    health: 100
+    attack: 3-10
+    heal: 4-20
+  }
+  monster{
+    health: 200
+    attack: 5-18
+  }
+
+//Dom 
+
+hero picture
+hero.health
+monster picture
+monster.health
+Attack Button 
+Heal Button
+Status
+

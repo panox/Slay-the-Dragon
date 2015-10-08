@@ -1,0 +1,20 @@
+One Hero with Health 100
+One Enemy with Health 200
+
+Player Turn
+  Two Buttons
+  One button Attack
+    Generates a random number between 3-10 and subtracts it form the enemy
+  One button Heal
+    Generates a random number between 4-20 and adds it to hero health
+
+Enemy Turn
+  Attack
+  Random Number between 5-18
+  Subtract Attack Number from Hero Health
+
+End of Turn
+Show how much healt was lost or gained for each character
+
+End of Game
+When one character's health reaches 0
