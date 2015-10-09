@@ -43,6 +43,12 @@ $(function() {
   game.garyProgress();
   game.dariusProgress();
 
+  //Enemy Turn
+  game.enemyTurn = function(){
+   darius.damage(gary);
+   game.garyProgress();
+  }
+
   //Attack Button
   $('#attackBtn').click(function() {
     gary.damage(darius);
@@ -57,11 +63,6 @@ $(function() {
     setTimeout(game.enemyTurn, 1000);
   });
 
-  //Enemy Turn
-  game.enemyTurn = function(){
-   darius.damage(gary);
-   game.garyProgress();
-  }
 
   // debugger
 });
