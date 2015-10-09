@@ -28,9 +28,13 @@ $(function() {
   }
 
   //Health Bars
-  $('#hero-health').progressbar({
-    value: gary.health
-  });
+  progress(gary.health, $('#hero-health'));
+  function progress(percent, $element) {
+      var progressBarWidth = percent * $element.width() / 100;
+      $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
+  }
+
+
 
   // debugger
 });
