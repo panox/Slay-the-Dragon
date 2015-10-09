@@ -8,7 +8,7 @@ $(function() {
       var dmg = Math.floor(Math.random() * (maxAtk - minAtk)) + minAtk;
       enemyName.health -= dmg;
       console.log(dmg);
-      return enemyName.health;
+      console.log(enemyName.health);
     }
   }
 
@@ -16,9 +16,12 @@ $(function() {
   gary.healing = function(){
     var heal = Math.floor(Math.random() * (20 - 4)) + 4;
     //check for health up to 100
-    this.health += heal;
-    console.log(heal);
-    return gary.health;
+    if (gary.health += heal > 100) {
+      gary.health = 100;
+    } else {
+      gary.health += heal;
+    }
+    console.log(gary.health + ":"+ heal);
   }
   var darius = new Figure('Darius', 200, 4, 20);
 
