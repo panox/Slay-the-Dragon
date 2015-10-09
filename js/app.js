@@ -49,7 +49,7 @@ $(function() {
   $('#healBtn').click(function() {
     gary.healing();
     progress(gary.health, $('#hero-health'));
-    setTimeout(game.enemyTurn, 800);
+    setTimeout(game.enemyTurn, 1000);
   });
 
   //Enemy Turn
