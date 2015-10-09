@@ -20,7 +20,7 @@ $(function() {
     console.log(heal);
     return gary.health;
   }
-  var enemy = new Figure('Darius', 200, 4, 20);
+  var darius = new Figure('Darius', 200, 4, 20);
 
   debugger
 });
