@@ -1,15 +1,15 @@
 $(function() {
-
+  //Game Object
   var game = {
+    progress: function(percent, $element) {
+        var progressBarWidth = percent * $element.width() / 100;
+        $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
+    },
     garyProgress: function() {
       game.progress(gary.health, $('#hero-health'));
     },
     dariusProgress: function() {
       game.progress(darius.health/2, $('#enemy-health'));
-    },
-    progress: function(percent, $element) {
-        var progressBarWidth = percent * $element.width() / 100;
-        $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
     }
   }
 
