@@ -1,7 +1,16 @@
 $(function() {
 
   var game = {
-    turn: 0
+    garyProgress: function() {
+      game.progress(gary.health, $('#hero-health'));
+    },
+    dariusProgress: function() {
+      game.progress(darius.health/2, $('#enemy-health'));
+    },
+    progress: function(percent, $element) {
+        var progressBarWidth = percent * $element.width() / 100;
+        $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
+    }
   }
 
   //Object Constructor
@@ -30,32 +39,28 @@ $(function() {
     console.log("Gary's health is: " + gary.health)
   }
 
-  //Health Bars
-  progress(gary.health, $('#hero-health'));
-  progress(darius.health/2, $('#enemy-health'));
-  function progress(percent, $element) {
-      var progressBarWidth = percent * $element.width() / 100;
-      $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
-  }
+  //Initial Health Bars
+  game.garyProgress();
+  game.dariusProgress();
 
   //Attack Button
   $('#attackBtn').click(function() {
     gary.damage(darius);
-    progress(darius.health/2, $('#enemy-health'));
+    game.dariusProgress();
     setTimeout(game.enemyTurn, 800);
   });
 
   //Heal Button
   $('#healBtn').click(function() {
     gary.healing();
-    progress(gary.health, $('#hero-health'));
+    game.garyProgress();
     setTimeout(game.enemyTurn, 1000);
   });
 
   //Enemy Turn
   game.enemyTurn = function(){
    darius.damage(gary);
-   progress(gary.health, $('#hero-health')); 
+   game.garyProgress();
   }
 
   // debugger
