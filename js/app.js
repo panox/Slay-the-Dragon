@@ -27,5 +27,7 @@ $(function() {
     console.log("Gary's health is: " + gary.health)
   }
 
+  //Health Bars
+
   // debugger
 });
