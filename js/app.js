@@ -7,8 +7,8 @@ $(function() {
     this.damage = function(enemyName){
       var dmg = Math.floor(Math.random() * (maxAtk - minAtk)) + minAtk;
       enemyName.health -= dmg;
-      console.log(dmg);
-      console.log(enemyName.health);
+      console.log("Damage done: " + dmg)
+      console.log(enemyName.name + "'s Health: " + enemyName.health)
     }
   }
 
@@ -18,13 +18,14 @@ $(function() {
   gary.healing = function(){
     var heal = Math.floor(Math.random() * (20 - 4)) + 4;
     //check for health up to 100
-    if (gary.health += heal > 100) {
+    if (gary.health + heal > 100) {
       gary.health = 100;
     } else {
       gary.health += heal;
     }
-    console.log(gary.health + ":"+ heal);
+    console.log("Healing for: " + heal);
+    console.log("Gary's health is: " + gary.health)
   }
-  
-  debugger
+
+  // debugger
 });
