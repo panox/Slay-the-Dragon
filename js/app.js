@@ -17,7 +17,7 @@ $(function() {
     var heal = Math.floor(Math.random() * (20 - 4)) + 4;
     this.health += heal;
     console.log(heal);
-    return enemyName.health;
+    return gary.health;
   }
   var enemy = new Figure('Darius', 200, 4, 20);
 
