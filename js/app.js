@@ -34,6 +34,12 @@ $(function() {
       $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
   }
 
+  //Attack Button
+  $('#attackBtn').click(function() {
+    gary.damage(darius);
+    progress(darius.health/2, $('#enemy-health'));
+  });
+
 
 
   // debugger
