@@ -56,6 +56,10 @@ $(function() {
     $('#healBtn').disable(boolean);
   }
 
+  game.checkWin = function(){
+    
+  }
+
   //Initial Health Bars
   game.garyProgress();
   game.dariusProgress();
@@ -82,7 +86,6 @@ $(function() {
     game.disableBtns(true);
     setTimeout(game.enemyTurn, 1000);
   });
-
 
   // debugger
 });
