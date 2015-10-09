@@ -29,7 +29,7 @@ $(function() {
 
   //Health Bars
   $('#hero-health').progressbar({
-    value: 20
+    value: gary.health
   });
 
   // debugger
