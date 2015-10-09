@@ -42,7 +42,7 @@ $(function() {
   $('#attackBtn').click(function() {
     gary.damage(darius);
     progress(darius.health/2, $('#enemy-health'));
-    setTimeout(game.enemyTurn, 3000);
+    setTimeout(game.enemyTurn, 800);
   });
 
   //Heal Button
