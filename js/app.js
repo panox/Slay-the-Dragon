@@ -57,7 +57,9 @@ $(function() {
   }
 
   game.checkWin = function(){
-    
+    //if health of eith is < 0
+    //alert winner
+    game.disableBtns(true);
   }
 
   //Initial Health Bars
