@@ -1,5 +1,9 @@
 $(function() {
 
+  var game = {
+    turn: 0
+  }
+
   //Object Constructor
   function Figure (name, health, minAtk, maxAtk) {
     this.name = name;
