@@ -40,6 +40,11 @@ $(function() {
     progress(darius.health/2, $('#enemy-health'));
   });
 
+  //Heal Button
+
+  //Enemy Turn
+  darius.damage(gary);
+  progress(gary.health, $('#hero-health'));
 
 
   // debugger
