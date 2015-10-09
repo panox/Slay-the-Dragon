@@ -48,7 +48,7 @@ $(function() {
       }
   });
 
-  function disableBtns(boolean) {
+  game.disableBtns = function(boolean) {
     $('#attackBtn').disable(boolean);
     $('#healBtn').disable(boolean);
   }
@@ -61,14 +61,14 @@ $(function() {
   game.enemyTurn = function(){
    darius.damage(gary);
    game.garyProgress();
-   disableBtns(false);
+   game.disableBtns(false);
   }
 
   //Attack Button
   $('#attackBtn').click(function() {
     gary.damage(darius);
     game.dariusProgress();
-    disableBtns(true);
+    game.disableBtns(true);
     setTimeout(game.enemyTurn, 800);
   });
 
@@ -76,7 +76,7 @@ $(function() {
   $('#healBtn').click(function() {
     gary.healing();
     game.garyProgress();
-    disableBtns(true);
+    game.disableBtns(true);
     setTimeout(game.enemyTurn, 1000);
   });
 
