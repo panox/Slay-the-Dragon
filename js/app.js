@@ -42,14 +42,16 @@ $(function() {
   $('#attackBtn').click(function() {
     gary.damage(darius);
     progress(darius.health/2, $('#enemy-health'));
+    setTimeout(game.enemyTurn, 3000);
   });
 
   //Heal Button
 
   //Enemy Turn
-  darius.damage(gary);
-  progress(gary.health, $('#hero-health'));
-
+  game.enemyTurn = function(){
+   darius.damage(gary);
+   progress(gary.health, $('#hero-health')); 
+  }
 
   // debugger
 });
