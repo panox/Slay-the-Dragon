@@ -25,3 +25,6 @@ Attack Button
 Heal Button
 Status
 
+//Animate
+wiggle animation
+slash animation
