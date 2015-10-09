@@ -36,10 +36,12 @@ $(function() {
   }
   //Object Instances
   var gary = new Figure('Gary', 100, 3, 10);
-  var darius = new Figure('Darius', 200, 4, 20);
+  var darius = new Figure('Darius', 200, 4, 15);
   //Heal method
   gary.healing = function(){
-    var heal = Math.floor(Math.random() * (20 - 4)) + 4;
+    var maxHeal = 20;
+    var minHeal = 8;
+    var heal = Math.floor(Math.random() * (maxHeal - minHeal)) + minHeal;
     if (gary.health + heal > 100) {
       gary.health = 100;
     } else {
