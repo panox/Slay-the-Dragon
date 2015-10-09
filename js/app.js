@@ -1,4 +1,14 @@
 $(function() {
+
+  // Disable function
+  jQuery.fn.extend({
+      disable: function(state) {
+          return this.each(function() {
+              this.disabled = state;
+          });
+      }
+  });
+  
   //Game Object
   var game = {
     progress: function(percent, $element) {
@@ -38,15 +48,6 @@ $(function() {
     console.log("Healing for: " + heal);
     console.log("Gary's health is: " + gary.health)
   }
-
-  // Disable function
-  jQuery.fn.extend({
-      disable: function(state) {
-          return this.each(function() {
-              this.disabled = state;
-          });
-      }
-  });
 
   game.disableBtns = function(boolean) {
     $('#attackBtn').disable(boolean);
