@@ -13,6 +13,7 @@ $(function() {
   }
 
   var gary = new Figure('Gary', 100, 3, 10);
+  var enemy = new Figure('Darius', 200, 4, 20);
 
 
 
