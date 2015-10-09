@@ -39,6 +39,20 @@ $(function() {
     console.log("Gary's health is: " + gary.health)
   }
 
+  // Disable function
+  jQuery.fn.extend({
+      disable: function(state) {
+          return this.each(function() {
+              this.disabled = state;
+          });
+      }
+  });
+
+  function disableBtns(boolean) {
+    $('#attackBtn').disable(boolean);
+    $('#healBtn').disable(boolean);
+  }
+
   //Initial Health Bars
   game.garyProgress();
   game.dariusProgress();
@@ -47,12 +61,14 @@ $(function() {
   game.enemyTurn = function(){
    darius.damage(gary);
    game.garyProgress();
+   disableBtns(false);
   }
 
   //Attack Button
   $('#attackBtn').click(function() {
     gary.damage(darius);
     game.dariusProgress();
+    disableBtns(true);
     setTimeout(game.enemyTurn, 800);
   });
 
@@ -60,6 +76,7 @@ $(function() {
   $('#healBtn').click(function() {
     gary.healing();
     game.garyProgress();
+    disableBtns(true);
     setTimeout(game.enemyTurn, 1000);
   });
 
