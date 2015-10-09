@@ -15,6 +15,7 @@ $(function() {
   var gary = new Figure('Gary', 100, 3, 10);
   gary.healing = function(){
     var heal = Math.floor(Math.random() * (20 - 4)) + 4;
+    //check for health up to 100
     this.health += heal;
     console.log(heal);
     return gary.health;
