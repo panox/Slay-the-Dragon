@@ -46,6 +46,11 @@ $(function() {
   });
 
   //Heal Button
+  $('#healBtn').click(function() {
+    gary.healing();
+    progress(gary.health, $('#hero-health'));
+    setTimeout(game.enemyTurn, 800);
+  });
 
   //Enemy Turn
   game.enemyTurn = function(){
