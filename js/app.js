@@ -13,7 +13,6 @@ $(function() {
   }
 
   var gary = new Figure('Gary', 100, 3, 10);
-  debugger
 
 
 
