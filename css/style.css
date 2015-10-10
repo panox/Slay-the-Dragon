@@ -42,8 +42,7 @@ h1 {
 }
 
 .game {
-  background-image: url(../assets/background.png);
-  background-repeat: no-repeat;
+  background-color: blue;
   height: 186px;
 }
 

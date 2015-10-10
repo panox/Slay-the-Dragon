@@ -109,6 +109,7 @@ $(function() {
 
   //Animations
   function moveForward() {
+    game.$gary.css( "background-position", "0 -150px" );
     TweenMax.to(game.$gary, 0.9, {left:"220px", onComplete:change});
     
   }
