@@ -80,7 +80,7 @@ $(function() {
   //Enemy Turn
   game.enemyTurn = function(){
    darius.damage(gary);
-   game.$actions.append('<p>' + darius.dmgText + '</p>');
+   game.$actions.prepend('<p>' + darius.dmgText + '</p>');
    game.garyProgress();
    game.checkWin();
    game.disableBtns(false);
@@ -89,17 +89,17 @@ $(function() {
   $('#attackBtn').click(function() {
     event.preventDefault();
     gary.damage(darius);
-    game.$actions.append('<p>' + gary.dmgText + '</p>');
+    game.$actions.prepend('<p>' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.disableBtns(true);
-    setTimeout(game.enemyTurn, 800);
+    setTimeout(game.enemyTurn, 1200);
   });
 
   //Heal Button
   $('#healBtn').click(function() {
     event.preventDefault();
     gary.healing();
-    game.$actions.append('<p>' + gary.healText + '</p>');
+    game.$actions.prepend('<p>' + gary.healText + '</p>');
     game.garyProgress();
     game.disableBtns(true);
     setTimeout(game.enemyTurn, 1000);
