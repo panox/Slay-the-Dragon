@@ -43,11 +43,14 @@
 
 
 #darius {
-  display: inline-block;
   width: 96px;
   height: 96px;
   background-image: url(../assets/bahamut.png);
   background-position: 0 0;
+  position: relative;
+  display: inline-block;
+  top: 85px;
+  left: 335px;
 }
 
 footer {
