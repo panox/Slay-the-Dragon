@@ -1,3 +1,9 @@
+body {
+  /* Background pattern from subtlepatterns.com */
+  background: url(../assets/concrete_seamless.png);
+  font-family: 'Crimson Text', Georgia, Times, serif;
+}
+
 .container {
   width:500px;
   margin: 0 auto;
@@ -9,7 +15,8 @@ header {
 }
 
 h1 {
-  color: #A52B1C;
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+  color: #D33D2B;
   text-align: center;
   font-weight: bold;
 }
