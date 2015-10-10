@@ -20,6 +20,7 @@ h1 {
   text-align: center;
   font-weight: bold;
   text-shadow: 1px 1px 1px #ccc;
+  margin: 15px 0;
 }
 
 #hero-health, #enemy-health {
@@ -42,8 +43,9 @@ h1 {
 }
 
 .game {
-  background-color: blue;
-  height: 186px;
+  background-image: url(../assets/background.jpg);
+  width: 504px;
+  height: 303px;
 }
 
 #gary {
@@ -53,8 +55,8 @@ h1 {
   background-position: 0 -150px;
   position: relative;
   display: inline-block;
-  top: 60px;
-  left: 10px;
+  top: 125px;
+  left: 0px;
   z-index: 2;
 }
 
