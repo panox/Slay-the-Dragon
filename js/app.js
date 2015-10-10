@@ -2,13 +2,17 @@ $(function() {
 
   //Object Constructor
   function Figure (name, health, minAtk, maxAtk) {
+    this.dmgText = "";
     this.name = name;
     this.health = health;
     this.damage = function(enemyName){
       var dmg = Math.floor(Math.random() * (maxAtk - minAtk)) + minAtk;
       enemyName.health -= dmg;
-      console.log("Damage done: " + dmg)
-      console.log(enemyName.name + "'s Health: " + enemyName.health)
+      //
+      // console.log(name + " attacked " + enemyName.name + " for " + dmg)
+      // console.log(enemyName.name + "'s Health: " + enemyName.health)
+      //
+      this.dmgText = name + " attacked " + enemyName.name + " for " + dmg;
     }
   }
   //Object Instances
@@ -74,6 +78,7 @@ $(function() {
   //Enemy Turn
   game.enemyTurn = function(){
    darius.damage(gary);
+   console.log(darius.dmgText)
    game.garyProgress();
    game.checkWin();
    game.disableBtns(false);
