@@ -56,12 +56,12 @@ $(function() {
     $('#healBtn').disable(boolean);
   }
 
-  function checkWin(){
+  game.checkWin = function(){
     if (darius.health < 0) {
-      console.log("Gary Wins");
+      alert("Gary Wins");
     }
     if (gary.health < 0) {
-      console.log("Darius Wins");
+      alert("Darius Wins");
     }
     game.disableBtns(true);
   }
@@ -74,7 +74,7 @@ $(function() {
   game.enemyTurn = function(){
    darius.damage(gary);
    game.garyProgress();
-   checkWin();
+   game.checkWin();
    game.disableBtns(false);
   }
   //Attack Button
