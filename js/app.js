@@ -56,9 +56,13 @@ $(function() {
     $('#healBtn').disable(boolean);
   }
 
-  game.checkWin = function(){
-    //if health of eith is < 0
-    //alert winner
+  function checkWin(){
+    if (darius.health < 0) {
+      console.log("Gary Wins");
+    }
+    if (gary.health < 0) {
+      console.log("Darius Wins");
+    }
     game.disableBtns(true);
   }
 
@@ -70,9 +74,9 @@ $(function() {
   game.enemyTurn = function(){
    darius.damage(gary);
    game.garyProgress();
+   checkWin();
    game.disableBtns(false);
   }
-
   //Attack Button
   $('#attackBtn').click(function() {
     event.preventDefault();
