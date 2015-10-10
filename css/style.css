@@ -15,6 +15,7 @@
 }
 
 #hero-health div, #enemy-health div {
+  display: inline-block;
   height: 100%;
   color: #fff;
   text-align: right;
@@ -26,6 +27,7 @@
 .game {
   background-image: url(../assets/background.png);
   background-repeat: no-repeat;
+  height: 186px;
 }
 
 #gary {
@@ -34,10 +36,14 @@
   background-image: url(../assets/kainhighwind.png);
   background-position: 0 0;
   position: relative;
+  display: inline-block;
+  top: 85px;
+  left: 30px;
 }
 
 
 #darius {
+  display: inline-block;
   width: 96px;
   height: 96px;
   background-image: url(../assets/bahamut.png);
