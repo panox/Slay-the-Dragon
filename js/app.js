@@ -105,7 +105,7 @@ $(function() {
     setTimeout(game.enemyTurn, 1000);
   });
 
-  //Animations
+  //Animations     NEED REFACTORING
   $("#gary").animateSprite({
       fps: 10,
       columns:4,

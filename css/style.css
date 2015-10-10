@@ -1,9 +1,11 @@
 .container {
   width:500px;
+  margin: 0 auto;
 }
 
 .header {
   width: 500px;
+  margin: 0px 6px 15px;
 }
 
 #hero-health, #enemy-health {
