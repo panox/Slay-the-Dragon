@@ -13,3 +13,9 @@
     width: 0;
     background-color: #0099ff;
 }
+
+footer {
+  width: 180px;
+  height: 80px;
+  overflow: auto;
+}
