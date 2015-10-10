@@ -120,11 +120,11 @@ $(function() {
 
   function walkBackAndForth() {
     $("#gary").animateSprite('play', 'walkRight')
-    $("#gary").animate({left: "+=200"}, 1000, 
+    $("#gary").animate({left: "+=340"}, 1000, 
     function() {
       $("#gary").animateSprite('stop')
       $("#gary").animateSprite('play', 'walkLeft')
-      $("#gary").animate({left: "-=200"}, 1000, function() {
+      $("#gary").animate({left: "-=340"}, 1000, function() {
         $("#gary").animateSprite('play', 'front')
       });
     });
