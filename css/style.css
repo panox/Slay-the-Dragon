@@ -48,14 +48,14 @@ h1 {
 }
 
 #gary {
-  width: 32px;
-  height: 48px;
-  background-image: url(../assets/kainhighwind.png);
-  background-position: 0 0;
+  width: 167px;
+  height: 128px;
+  background-image: url(../assets/knight.png);
+  background-position: 0 -150px;
   position: relative;
   display: inline-block;
-  top: 85px;
-  left: 30px;
+  top: 60px;
+  left: 10px;
   z-index: 2;
 }
 

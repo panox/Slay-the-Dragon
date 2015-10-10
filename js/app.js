@@ -46,6 +46,7 @@ $(function() {
   //Game Object
   var game = {
     $actions: $('#actions'),
+    $gary: $('#gary'),
     progress: function(percent, $element) {
         var progressBarWidth = percent * $element.width() / 100;
         $element.find('div').animate({ width: progressBarWidth }, 500)
@@ -88,8 +89,8 @@ $(function() {
   //Attack Button
   $('#attackBtn').click(function() {
     event.preventDefault();
+    moveForward();
     gary.damage(darius);
-    walkBackAndForth();
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.disableBtns(true);
@@ -106,30 +107,17 @@ $(function() {
     setTimeout(game.enemyTurn, 3000);
   });
 
-  //Animations     NEED REFACTORING
-  $("#gary").animateSprite({
-      fps: 10,
-      columns:4,
-      loop: true,
-      animations: {
-        front: [0],
-        walkRight: [8, 9, 10, 11],
-        walkLeft: [4, 5, 6, 7]
-      },
-      autoplay: false
-  });
-
-  function walkBackAndForth() {
-    $("#gary").animateSprite('play', 'walkRight')
-    $("#gary").animate({left: "+=340"}, 1000, 
-    function() {
-      $("#gary").animateSprite('stop')
-      $("#gary").animateSprite('play', 'walkLeft')
-      $("#gary").animate({left: "-=340"}, 1000, function() {
-        $("#gary").animateSprite('play', 'front')
-      });
-    });
+  //Animations
+  function moveForward() {
+    TweenMax.to(game.$gary, 0.9, {left:"220px", onComplete:change});
+    
   }
+
+  function change() {
+    game.$gary.css( "background-position", "0 0" );
+    TweenMax.to(game.$gary, 0.9, {left:"10px"});
+  }
+
 
   // debugger
 });
