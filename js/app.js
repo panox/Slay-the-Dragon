@@ -48,7 +48,8 @@ $(function() {
     $actions: $('#actions'),
     progress: function(percent, $element) {
         var progressBarWidth = percent * $element.width() / 100;
-        $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
+        $element.find('div').animate({ width: progressBarWidth }, 500)
+        //text(percent + "% ");
     },
     garyProgress: function() {
       game.progress(gary.health, $('#hero-health'));

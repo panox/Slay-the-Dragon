@@ -3,8 +3,8 @@
   margin: 0 auto;
 }
 
-.header {
-  width: 500px;
+header {
+  width: 504px;
   margin: 0px 6px 15px;
 }
 
@@ -17,6 +17,7 @@
 }
 
 #hero-health div, #enemy-health div {
+  vertical-align:top;
   display: inline-block;
   height: 100%;
   color: #fff;
