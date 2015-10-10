@@ -105,13 +105,18 @@ $(function() {
   });
 
   //Animations
-  $("#gary").animateSprite({
-      fps: 12,
-      animations: {
+  function walkRight() {
+    $("#gary").animateSprite({
+        fps: 24,
+        animations: {
           walkRight: [8, 9, 10, 11],
-      },
-      loop: true
-  });
+        },
+        loop: true
+    });
+    $("#gary").animate({
+        left: "+=200"
+      }, 1000)
+  }
 
   // debugger
 });
