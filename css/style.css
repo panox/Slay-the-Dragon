@@ -24,7 +24,7 @@
 #darius {
   width: 96px;
   height: 96px;
-  background-image: url(../assets/bahamut.png) 0 0;
+  background-image: url(../assets/bahamut.png);
   background-position: 0 0;
 }
 
