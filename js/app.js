@@ -80,7 +80,7 @@ $(function() {
   //Enemy Turn
   game.enemyTurn = function(){
    darius.damage(gary);
-   game.$actions.prepend('<p> The terrible ' + darius.dmgText + '</p>');
+   game.$actions.prepend('<p> The Terrible ' + darius.dmgText + '</p>');
    game.garyProgress();
    game.checkWin();
    game.disableBtns(false);
