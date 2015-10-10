@@ -8,6 +8,12 @@ header {
   margin: 0px 6px 15px;
 }
 
+h1 {
+  color: #A52B1C;
+  text-align: center;
+  font-weight: bold;
+}
+
 #hero-health, #enemy-health {
   display: inline-block;
   width: 240px;
