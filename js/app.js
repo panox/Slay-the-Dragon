@@ -8,17 +8,17 @@ $(function() {
     this.damage = function(enemyName){
       var dmg = Math.floor(Math.random() * (maxAtk - minAtk)) + minAtk;
       enemyName.health -= dmg;
+      this.dmgText = name + " attacked " + enemyName.name + " for " + dmg;
       //
       // console.log(name + " attacked " + enemyName.name + " for " + dmg)
       // console.log(enemyName.name + "'s Health: " + enemyName.health)
-      //
-      this.dmgText = name + " attacked " + enemyName.name + " for " + dmg;
     }
   }
   //Object Instances
   var gary = new Figure('Gary', 100, 3, 10);
   var darius = new Figure('Darius', 200, 4, 15);
   //Heal method
+  gary.healText = "";
   gary.healing = function(){
     var maxHeal = 20;
     var minHeal = 8;
@@ -28,8 +28,10 @@ $(function() {
     } else {
       gary.health += heal;
     }
-    console.log("Healing for: " + heal);
-    console.log("Gary's health is: " + gary.health)
+    this.healText = "Healing for " + heal;
+    //
+    // console.log("Healing for: " + heal);
+    // console.log("Gary's health is: " + gary.health)
   }
 
   // Disable function
@@ -78,7 +80,7 @@ $(function() {
   //Enemy Turn
   game.enemyTurn = function(){
    darius.damage(gary);
-   console.log(darius.dmgText)
+   game.$actions.append('<p>' + darius.dmgText + '</p>');
    game.garyProgress();
    game.checkWin();
    game.disableBtns(false);
@@ -87,6 +89,7 @@ $(function() {
   $('#attackBtn').click(function() {
     event.preventDefault();
     gary.damage(darius);
+    game.$actions.append('<p>' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.disableBtns(true);
     setTimeout(game.enemyTurn, 800);
@@ -96,6 +99,7 @@ $(function() {
   $('#healBtn').click(function() {
     event.preventDefault();
     gary.healing();
+    game.$actions.append('<p>' + gary.healText + '</p>');
     game.garyProgress();
     game.disableBtns(true);
     setTimeout(game.enemyTurn, 1000);
