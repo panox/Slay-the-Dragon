@@ -1,5 +1,26 @@
 .container {
-  width:504px;
+  width:500px;
+}
+
+.header {
+  width: 500px;
+}
+
+#hero-health, #enemy-health {
+  display: inline-block;
+  width: 240px;
+  height: 22px;
+  border: 1px solid #111;
+  background-color: #292929;
+}
+
+#hero-health div, #enemy-health div {
+  height: 100%;
+  color: #fff;
+  text-align: right;
+  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+  width: 0;
+  background-color: #0099ff;
 }
 
 .game {
@@ -7,21 +28,6 @@
   background-repeat: no-repeat;
 }
 
-#hero-health, #enemy-health {
-    width: 400px;
-    height: 22px;
-    border: 1px solid #111;
-    background-color: #292929;
-}
-
-#hero-health div, #enemy-health div {
-    height: 100%;
-    color: #fff;
-    text-align: right;
-    line-height: 22px; /* same as #progressBar height if we want text middle aligned */
-    width: 0;
-    background-color: #0099ff;
-}
 #gary {
   width: 32px;
   height: 48px;
