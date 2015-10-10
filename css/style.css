@@ -71,6 +71,15 @@ h1 {
   z-index: 1;
 }
 
+.game-bot button {
+  margin: 0 30px;
+  height: 31px;
+  width: 130px;
+}
+.game-bot p{
+  display: inline-block;
+}
+
 footer {
   width: 180px;
   height: 80px;
