@@ -104,5 +104,14 @@ $(function() {
     setTimeout(game.enemyTurn, 1000);
   });
 
+  //Animations
+  $("#gary").animateSprite({
+      fps: 12,
+      animations: {
+          walkRight: [8, 9, 10, 11],
+      },
+      loop: true
+  });
+
   // debugger
 });
