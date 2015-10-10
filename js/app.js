@@ -28,7 +28,7 @@ $(function() {
     } else {
       gary.health += heal;
     }
-    this.healText = "Healing for " + heal;
+    this.healText = this.name + " healed himself for " + heal;
     //
     // console.log("Healing for: " + heal);
     // console.log("Gary's health is: " + gary.health)
@@ -80,7 +80,7 @@ $(function() {
   //Enemy Turn
   game.enemyTurn = function(){
    darius.damage(gary);
-   game.$actions.prepend('<p>' + darius.dmgText + '</p>');
+   game.$actions.prepend('<p> The terrible ' + darius.dmgText + '</p>');
    game.garyProgress();
    game.checkWin();
    game.disableBtns(false);
@@ -90,7 +90,7 @@ $(function() {
     event.preventDefault();
     gary.damage(darius);
     walkBackAndForth();
-    game.$actions.prepend('<p>' + gary.dmgText + '</p>');
+    game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.disableBtns(true);
     setTimeout(game.enemyTurn, 3000);
@@ -100,10 +100,10 @@ $(function() {
   $('#healBtn').click(function() {
     event.preventDefault();
     gary.healing();
-    game.$actions.prepend('<p>' + gary.healText + '</p>');
+    game.$actions.prepend('<p>  The Glorious ' + gary.healText + '</p>');
     game.garyProgress();
     game.disableBtns(true);
-    setTimeout(game.enemyTurn, 1000);
+    setTimeout(game.enemyTurn, 3000);
   });
 
   //Animations     NEED REFACTORING
