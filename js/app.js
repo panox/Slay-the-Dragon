@@ -1,28 +1,5 @@
 $(function() {
 
-  // Disable function
-  jQuery.fn.extend({
-      disable: function(state) {
-          return this.each(function() {
-              this.disabled = state;
-          });
-      }
-  });
-  
-  //Game Object
-  var game = {
-    progress: function(percent, $element) {
-        var progressBarWidth = percent * $element.width() / 100;
-        $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
-    },
-    garyProgress: function() {
-      game.progress(gary.health, $('#hero-health'));
-    },
-    dariusProgress: function() {
-      game.progress(darius.health/2, $('#enemy-health'));
-    }
-  }
-
   //Object Constructor
   function Figure (name, health, minAtk, maxAtk) {
     this.name = name;
@@ -51,6 +28,29 @@ $(function() {
     console.log("Gary's health is: " + gary.health)
   }
 
+  // Disable function
+  jQuery.fn.extend({
+      disable: function(state) {
+          return this.each(function() {
+              this.disabled = state;
+          });
+      }
+  });
+  
+  //Game Object
+  var game = {
+    progress: function(percent, $element) {
+        var progressBarWidth = percent * $element.width() / 100;
+        $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "% ");
+    },
+    garyProgress: function() {
+      game.progress(gary.health, $('#hero-health'));
+    },
+    dariusProgress: function() {
+      game.progress(darius.health/2, $('#enemy-health'));
+    }
+  }
+
   game.disableBtns = function(boolean) {
     $('#attackBtn').disable(boolean);
     $('#healBtn').disable(boolean);
@@ -75,6 +75,7 @@ $(function() {
 
   //Attack Button
   $('#attackBtn').click(function() {
+    event.preventDefault();
     gary.damage(darius);
     game.dariusProgress();
     game.disableBtns(true);
@@ -83,6 +84,7 @@ $(function() {
 
   //Heal Button
   $('#healBtn').click(function() {
+    event.preventDefault();
     gary.healing();
     game.garyProgress();
     game.disableBtns(true);
