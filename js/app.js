@@ -88,10 +88,11 @@ $(function() {
   $('#attackBtn').click(function() {
     event.preventDefault();
     gary.damage(darius);
+    walkBackAndForth();
     game.$actions.prepend('<p>' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.disableBtns(true);
-    setTimeout(game.enemyTurn, 1200);
+    setTimeout(game.enemyTurn, 3000);
   });
 
   //Heal Button
@@ -105,17 +106,28 @@ $(function() {
   });
 
   //Animations
-  function walkRight() {
-    $("#gary").animateSprite({
-        fps: 24,
-        animations: {
-          walkRight: [8, 9, 10, 11],
-        },
-        loop: true
+  $("#gary").animateSprite({
+      fps: 10,
+      columns:4,
+      loop: true,
+      animations: {
+        front: [0],
+        walkRight: [8, 9, 10, 11],
+        walkLeft: [4, 5, 6, 7]
+      },
+      autoplay: false
+  });
+
+  function walkBackAndForth() {
+    $("#gary").animateSprite('play', 'walkRight')
+    $("#gary").animate({left: "+=200"}, 1000, 
+    function() {
+      $("#gary").animateSprite('stop')
+      $("#gary").animateSprite('play', 'walkLeft')
+      $("#gary").animate({left: "-=200"}, 1000, function() {
+        $("#gary").animateSprite('play', 'front')
+      });
     });
-    $("#gary").animate({
-        left: "+=200"
-      }, 1000)
   }
 
   // debugger
