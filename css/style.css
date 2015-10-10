@@ -55,22 +55,22 @@ h1 {
   background-position: 0 -150px;
   position: relative;
   display: inline-block;
-  top: 125px;
+  top: 88px;
   left: 0px;
-  z-index: 2;
+  z-index: 3;
 }
 
 
 #darius {
-  width: 96px;
-  height: 96px;
-  background-image: url(../assets/bahamut.png);
+  width: 226px;
+  height: 204px;
+  background-image: url(../assets/dragon.png);
   background-position: 0 0;
   position: relative;
   display: inline-block;
-  top: 85px;
-  left: 335px;
-  z-index: 1;
+  top: 100px;
+  left: 109px;
+  z-index: 2;
 }
 
 .game-bot button {
