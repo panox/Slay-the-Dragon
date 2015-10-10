@@ -28,3 +28,12 @@ Status
 //Animate
 wiggle animation
 slash animation
+
+//Messages
+Garry attacked Darius for 10 dmg
+Garry healed for 20 hp
+Darius attacked Garry for 20 dmg
+
+
+
+
