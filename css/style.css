@@ -13,6 +13,18 @@
     width: 0;
     background-color: #0099ff;
 }
+#gary {
+  width: 32px;
+  height: 48px;
+  background: url(../assets/kainhighwind.png) 0 0;
+}
+
+
+#darius {
+  width: 96px;
+  height: 96px;
+  background: url(../assets/bahamut.png) 0 0;
+}
 
 footer {
   width: 180px;

@@ -70,7 +70,6 @@ $(function() {
     if (gary.health < 0) {
       alert("Darius Wins");
     }
-    game.disableBtns(true);
   }
 
   //Initial Health Bars
