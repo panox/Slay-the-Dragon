@@ -110,13 +110,18 @@ $(function() {
   //Animations
   function moveForward() {
     game.$gary.css( "background-position", "0 -150px" );
-    TweenMax.to(game.$gary, 0.9, {left:"190px", onComplete:change});
-    
+    TweenMax.to(game.$gary, 0.9, {
+      left:"190px", 
+      ease:Bounce.easeOut,
+      onComplete: moveBack
+    });
   }
-
-  function change() {
+  function moveBack() {
     game.$gary.css( "background-position", "0 0" );
-    TweenMax.to(game.$gary, 0.9, {left:"10px"});
+    TweenMax.to(game.$gary, 0.9, {
+      left:"10px", 
+      delay:0.3
+    });
   }
 
 
