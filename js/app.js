@@ -67,12 +67,22 @@ $(function() {
     $('#healBtn').disable(boolean);
   }
 
+  game.reset = function() {
+    gary.health = 100;
+    darius.health = 200;
+    game.$actions.html("");
+    game.garyProgress();
+    game.dariusProgress();
+  }
+
   game.checkWin = function(){
     if (darius.health < 0) {
       alert("Gary Wins");
+      game.reset();
     }
     if (gary.health < 0) {
       alert("Darius Wins");
+      game.reset();
     }
   }
 
@@ -109,8 +119,8 @@ $(function() {
     game.garyProgress();
     game.disableBtns(true);
     setTimeout(game.enemyTurn, 3000);
+    debugger
   });
-
   //Animations
   var animations = {
     moveForward: function () {
@@ -144,5 +154,4 @@ $(function() {
   }
 
 
-  // debugger
 });
