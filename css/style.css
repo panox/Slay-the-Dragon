@@ -82,6 +82,14 @@ h1 {
   left: -120px;
 }
 
+#healStar {
+  opacity: 1;
+  height: 45px;
+  position: relative;
+  top: -104px;
+  left: 44px;
+}
+
 .game-bot button {
   margin: 0 23px;
   height: 31px;

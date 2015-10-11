@@ -48,7 +48,7 @@ $(function() {
     $actions: $('#actions'),
     $gary: $('#gary'),
     $flame: $('#flame'),
-    $healStar: $('#heal')
+    $healStar: $('#healStar'),
     progress: function(percent, $element) {
         var progressBarWidth = percent * $element.width() / 100;
         $element.find('div').animate({ width: progressBarWidth }, 500)
@@ -103,6 +103,7 @@ $(function() {
   //Heal Button
   $('#healBtn').click(function() {
     event.preventDefault();
+    healAnimation();
     gary.healing();
     game.$actions.prepend('<p>  The Glorious ' + gary.healText + '</p>');
     game.garyProgress();
