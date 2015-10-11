@@ -90,7 +90,7 @@ h1 {
   left: 74px;
 }
 #winbox {
-  opacity: 0;
+  display: none;
   background-color: blue;
   width: 504px;
   height: 200px;
