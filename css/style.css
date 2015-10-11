@@ -89,6 +89,14 @@ h1 {
   top: -104px;
   left: 74px;
 }
+#winbox {
+  opacity: 0;
+  background-color: blue;
+  width: 504px;
+  height: 200px;
+  position: relative;
+  top: -158px;
+}
 
 .game-bot button {
   margin: 0 23px;

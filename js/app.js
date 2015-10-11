@@ -138,8 +138,9 @@ $(function() {
       });
     },
     fireball: function () {
-      game.$flame.css({"left": "-150px", "opacity": "1"})
+      game.$flame.css("left", "-150px")
       TweenMax.to(game.$flame, 0.9, {
+        onStart: function() {game.$flame.css("opacity", "1")},
         left: "-320px",
         onComplete: function() {game.$flame.css("opacity", "0")}
       });
