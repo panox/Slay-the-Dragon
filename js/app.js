@@ -119,7 +119,6 @@ $(function() {
     game.garyProgress();
     game.disableBtns(true);
     setTimeout(game.enemyTurn, 3000);
-    debugger
   });
   //Animations
   var animations = {
@@ -139,9 +138,8 @@ $(function() {
       });
     },
     fireball: function () {
-      game.$flame.css("left", "-150px")
+      game.$flame.css({"left": "-150px", "opacity": "1"})
       TweenMax.to(game.$flame, 0.9, {
-        onStart: function() {game.$flame.css("opacity", "1")},
         left: "-320px",
         onComplete: function() {game.$flame.css("opacity", "0")}
       });
@@ -153,5 +151,5 @@ $(function() {
     }
   }
 
-
+  // debugger
 });
