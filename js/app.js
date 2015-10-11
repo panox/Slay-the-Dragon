@@ -48,6 +48,7 @@ $(function() {
     $actions: $('#actions'),
     $gary: $('#gary'),
     $flame: $('#flame'),
+    $healStar: $('#heal')
     progress: function(percent, $element) {
         var progressBarWidth = percent * $element.width() / 100;
         $element.find('div').animate({ width: progressBarWidth }, 500)
@@ -133,7 +134,11 @@ $(function() {
       onComplete: function() {game.$flame.css("opacity", "0")}
     });
   }
-
+  function healAnimation() {
+    TweenMax.to(game.$healStar, 1, {opacity:"1",
+    repeat:1, repeatDelay:0.5, yoyo:true
+    });
+  }
 
   // debugger
 });
