@@ -81,7 +81,7 @@ $(function() {
       game.reset();
     }
     if (gary.health < 0) {
-      alert("Darius Wins");
+      alert("Gary Wins");
       game.reset();
     }
   }
@@ -96,7 +96,7 @@ $(function() {
     darius.damage(gary);
     game.$actions.prepend('<p> The Terrible ' + darius.dmgText + '</p>');
     game.garyProgress();
-    game.checkWin();
+    ;
     game.disableBtns(false);
   }
   //Attack Button
@@ -142,8 +142,12 @@ $(function() {
       TweenMax.to(game.$flame, 0.9, {
         onStart: function() {game.$flame.css("opacity", "1")},
         left: "-320px",
-        onComplete: function() {game.$flame.css("opacity", "0")}
+        onComplete: animations.fireballComplete
       });
+    },
+    fireballComplete: function() {
+      game.$flame.css("opacity", "0");
+      game.checkWin();
     },
     healAnimation: function () {
       TweenMax.to(game.$healStar, 0.8, {opacity:"1",

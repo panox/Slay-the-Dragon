@@ -69,7 +69,7 @@ h1 {
   position: relative;
   display: inline-block;
   top: 100px;
-  left: 109px;
+  left: 107px;
   z-index: 2;
 }
 
@@ -96,6 +96,7 @@ h1 {
   height: 200px;
   position: relative;
   top: -158px;
+  z-index: 5;
 }
 
 .game-bot button {
