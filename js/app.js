@@ -82,7 +82,7 @@ $(function() {
 
   //Enemy Turn
   game.enemyTurn = function(){
-    fireball();
+    animations.fireball();
     darius.damage(gary);
     game.$actions.prepend('<p> The Terrible ' + darius.dmgText + '</p>');
     game.garyProgress();
@@ -92,7 +92,7 @@ $(function() {
   //Attack Button
   $('#attackBtn').click(function() {
     event.preventDefault();
-    moveForward();
+    animations.moveForward();
     gary.damage(darius);
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
@@ -103,7 +103,7 @@ $(function() {
   //Heal Button
   $('#healBtn').click(function() {
     event.preventDefault();
-    healAnimation();
+    animations.healAnimation();
     gary.healing();
     game.$actions.prepend('<p>  The Glorious ' + gary.healText + '</p>');
     game.garyProgress();
@@ -112,33 +112,35 @@ $(function() {
   });
 
   //Animations
-  function moveForward() {
-    game.$gary.css("background-position", "0 -150px");
-    TweenMax.to(game.$gary, 0.9, {
-      left:"190px", 
-      ease:Bounce.easeOut,
-      onComplete: moveBack
-    });
-  }
-  function moveBack() {
-    game.$gary.css( "background-position", "0 0" );
-    TweenMax.to(game.$gary, 0.9, {
-      left:"10px", 
-      delay:0.6
-    });
-  }
-  function fireball() {
-    game.$flame.css("left", "-150px")
-    TweenMax.to(game.$flame, 0.9, {
-      onStart: function() {game.$flame.css("opacity", "1")},
-      left: "-320px",
-      onComplete: function() {game.$flame.css("opacity", "0")}
-    });
-  }
-  function healAnimation() {
-    TweenMax.to(game.$healStar, 1, {opacity:"1",
-    repeat:1, repeatDelay:0.5, yoyo:true
-    });
+  var animations = {
+    moveForward: function () {
+      game.$gary.css("background-position", "0 -150px");
+      TweenMax.to(game.$gary, 0.9, {
+        left:"190px", 
+        ease:Bounce.easeOut,
+        onComplete: animations.moveBack
+      });
+    },
+    moveBack: function () {
+      game.$gary.css( "background-position", "0 0" );
+      TweenMax.to(game.$gary, 0.9, {
+        left:"10px", 
+        delay:0.6
+      });
+    },
+    fireball: function () {
+      game.$flame.css("left", "-150px")
+      TweenMax.to(game.$flame, 0.9, {
+        onStart: function() {game.$flame.css("opacity", "1")},
+        left: "-320px",
+        onComplete: function() {game.$flame.css("opacity", "0")}
+      });
+    },
+    healAnimation: function () {
+      TweenMax.to(game.$healStar, 0.8, {opacity:"1",
+        repeat:1, repeatDelay:0.5, yoyo:true
+      });
+    }
   }
 
 
