@@ -96,7 +96,6 @@ $(function() {
     darius.damage(gary);
     game.$actions.prepend('<p> The Terrible ' + darius.dmgText + '</p>');
     game.garyProgress();
-    ;
     game.disableBtns(false);
   }
   //Attack Button
