@@ -134,8 +134,6 @@ $(function() {
     });
   }
 
-  $('h1').css("left", "-150px")
-
 
   // debugger
 });
