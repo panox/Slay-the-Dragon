@@ -109,7 +109,7 @@ $(function() {
 
   //Animations
   function moveForward() {
-    game.$gary.css( "background-position", "0 -150px" );
+    game.$gary.css("background-position", "0 -150px");
     TweenMax.to(game.$gary, 0.9, {
       left:"190px", 
       ease:Bounce.easeOut,
@@ -120,7 +120,7 @@ $(function() {
     game.$gary.css( "background-position", "0 0" );
     TweenMax.to(game.$gary, 0.9, {
       left:"10px", 
-      delay:0.3
+      delay:0.6
     });
   }
 
