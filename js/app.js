@@ -47,6 +47,7 @@ $(function() {
   var game = {
     $actions: $('#actions'),
     $gary: $('#gary'),
+    $flame: $('#flame'),
     progress: function(percent, $element) {
         var progressBarWidth = percent * $element.width() / 100;
         $element.find('div').animate({ width: progressBarWidth }, 500)
@@ -80,11 +81,12 @@ $(function() {
 
   //Enemy Turn
   game.enemyTurn = function(){
-   darius.damage(gary);
-   game.$actions.prepend('<p> The Terrible ' + darius.dmgText + '</p>');
-   game.garyProgress();
-   game.checkWin();
-   game.disableBtns(false);
+    fireball();
+    darius.damage(gary);
+    game.$actions.prepend('<p> The Terrible ' + darius.dmgText + '</p>');
+    game.garyProgress();
+    game.checkWin();
+    game.disableBtns(false);
   }
   //Attack Button
   $('#attackBtn').click(function() {
@@ -121,6 +123,13 @@ $(function() {
     TweenMax.to(game.$gary, 0.9, {
       left:"10px", 
       delay:0.6
+    });
+  }
+  function fireball() {
+    TweenMax.to(game.$flame, 0.9, {
+      onStart: function() {game.$flame.css("opacity", "1")},
+      left: "-320px",
+      onComplete: function() {game.$flame.css("opacity", "0")}
     });
   }
 
