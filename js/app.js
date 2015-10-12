@@ -182,21 +182,21 @@ $(function() {
   var sounds = {
     healSound: function () {
       var mySound = soundManager.createSound({
-        id: "mySound",
+        id: "heal",
         url: "../sounds/heal.wav"
       });
       mySound.play();
     },
     fireballSound: function () {
       var mySound = soundManager.createSound({
-        id: "mySound",
-        url: "../sounds/fireball.wav"
+        id: "fireball",
+        url: "../sounds/fireball.mp3"
       });
       mySound.play();
     },
-    hitSound: function () {
+    runSound: function () {
       var mySound = soundManager.createSound({
-        id: "mySound",
+        id: "run",
         url: "../sounds/hit.wav"
       });
       mySound.play();
