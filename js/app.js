@@ -1,13 +1,19 @@
 $(function() {
 
-  $('#heroInput').on('blur', function(){
-    event.preventDefault();
-    var heroName = $('#heroInput').val() || "GARRY";
-    console.log(heroName);
-    $('#heroName').text(heroName);
+  $('#heroInput').on('keypress',function(e){
+    var heroInput = $('#heroInput').val();
+    var p = e.which;
+    if (p == 13) {
+      event.preventDefault();
+      if (heroInput.length < 5) {
+        var heroName = heroInput || "GARRY";
+        $('#heroName').text(heroName.toUpperCase());
+        $('form').hide();
+      }
+    }
   })
   
-  // prompt("Please enter your hero name").toUpperCase() || "GARRY"
+  // check input length
 
   //Object Constructor
   function Figure (name, health, minAtk, maxAtk, critChance) {
