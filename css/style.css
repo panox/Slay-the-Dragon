@@ -76,13 +76,6 @@ h1 {
   z-index: 2;
 }
 
-form {
-  position: relative;
-  text-align: center;
-  margin-top: 10px;
-  font-size: 18px;
-}
-
 #flame {
   opacity: 0;
   width: 70px;
@@ -117,6 +110,20 @@ form {
   text-shadow: 1px 1px 1px #000;
 }
 
+form {
+  position: relative;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+form label {
+  margin-right: 5px;
+}
+
+.game-bot {
+  display: none;
+}
 
 .game-bot button {
   margin: 0 23px;

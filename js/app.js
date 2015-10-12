@@ -5,15 +5,14 @@ $(function() {
     var p = e.which;
     if (p == 13) {
       event.preventDefault();
-      if (heroInput.length < 5) {
+      if (heroInput.length < 6) {
         var heroName = heroInput || "GARRY";
         $('#heroName').text(heroName.toUpperCase());
         $('form').hide();
+        $('.game-bot').show();
       }
     }
   })
-  
-  // check input length
 
   //Object Constructor
   function Figure (name, health, minAtk, maxAtk, critChance) {
