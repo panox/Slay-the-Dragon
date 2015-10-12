@@ -11,7 +11,8 @@ $(function() {
       if (crit === 1) {
         dmg *= 2
         this.dmgText = name + " critted " + enemyName.name + " for " + dmg;
-      } else {
+      } 
+      else {
         this.dmgText = name + " attacked " + enemyName.name + " for " + dmg;
       }
       enemyName.health -= dmg;
