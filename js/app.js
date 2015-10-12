@@ -118,7 +118,7 @@ $(function() {
     darius.damage(gary);
     game.$actions.prepend('<p> The Terrible ' + darius.dmgText + '</p>');
     game.garyProgress();
-    game.disableBtns(false);
+    
   }
   //Attack Button
   $('#attackBtn').click(function() {
@@ -201,6 +201,7 @@ $(function() {
     fireballComplete: function() {
       game.$flame.css("opacity", "0");
       game.checkWin();
+      game.disableBtns(false);
     },
     healAnimation: function () {
       TweenMax.to(game.$healStar, 0.8, {opacity:"1",
