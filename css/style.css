@@ -76,6 +76,13 @@ h1 {
   z-index: 2;
 }
 
+form {
+  position: relative;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
 #flame {
   opacity: 0;
   width: 70px;
