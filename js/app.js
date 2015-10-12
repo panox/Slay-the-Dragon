@@ -1,5 +1,8 @@
 $(function() {
 
+  var heroName = prompt("Please enter your hero name").toUpperCase() || "GARRY"
+  $('#heroName').text(heroName);
+
   //Object Constructor
   function Figure (name, health, minAtk, maxAtk, critChance) {
     this.dmgText = "";
@@ -27,7 +30,7 @@ $(function() {
     }
   }
   //Object Instances
-  var gary = new Figure('Gary', 100, 3, 10, 5);
+  var gary = new Figure(heroName, 100, 3, 10, 5);
   var darius = new Figure('Darius', 200, 4, 15, 20);
   //Heal method
   gary.healText = "";
