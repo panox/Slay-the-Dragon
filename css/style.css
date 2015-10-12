@@ -63,13 +63,17 @@ h1 {
 }
 
 #garyDmg {
-  background:rgba(255,255,255, 0.3);
+  color: white;
+  text-align: center;
+  font-size: 40px;
+/*  background:rgba(255,255,255, 0.3);*/
+  text-shadow: 4px 1px 1px #000;
   border-radius: 38%;
   height: 60px;
   width: 70px;
   position: relative;
   top: -171px;
-  left: 35px;
+  left: 126px;
 }
 
 

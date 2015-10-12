@@ -134,6 +134,7 @@ $(function() {
     event.preventDefault();
     animations.moveForward();
     gary.damage(darius);
+    $('#garyDmg').html(gary.damageNum).show().delay(900).fadeOut( "slow" );
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.disableBtns(true);
