@@ -12,14 +12,16 @@ $(function() {
       if (hit !== 1) {
         if (crit === 1) {
           dmg *= 2
-          this.dmgText = this.name + " critted " + enemyName.name + " for " + dmg;
+          this.dmgText = this.name + "<span class='crit'> critted </span>" 
+          + enemyName.name + " for " + dmg;
         } 
         else {
-          this.dmgText = this.name + "<span class='attacked'> attacked </span>" + enemyName.name + " for " + dmg;
+          this.dmgText = this.name + "<span class='attacked'> attacked </span>" 
+          + enemyName.name + " for " + dmg;
         }
         enemyName.health -= dmg;
       } else {
-        this.dmgText = this.name + " attack missed!"
+        this.dmgText = this.name + " attack <span class='missed'>missed!</span>"
       }
       //
       // console.log(name + " attacked " + enemyName.name + " for " + dmg)
