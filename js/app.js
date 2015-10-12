@@ -1,6 +1,6 @@
 $(function() {
 
-  var heroName = "GARRY";
+  var heroName =  || "GARRY";
   // prompt("Please enter your hero name").toUpperCase() || "GARRY"
   $('#heroName').text(heroName);
 
