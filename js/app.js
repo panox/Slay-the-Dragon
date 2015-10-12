@@ -15,7 +15,7 @@ $(function() {
           this.dmgText = this.name + " critted " + enemyName.name + " for " + dmg;
         } 
         else {
-          this.dmgText = this.name + " attacked " + enemyName.name + " for " + dmg;
+          this.dmgText = this.name + "<span class='attacked'> attacked </span>" + enemyName.name + " for " + dmg;
         }
         enemyName.health -= dmg;
       } else {

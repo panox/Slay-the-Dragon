@@ -146,3 +146,7 @@ footer {
   letter-spacing: 1.1px;
   overflow: auto;
 }
+
+.attacked {
+  color: #25947E;
+}
