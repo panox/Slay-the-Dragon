@@ -80,14 +80,20 @@ $(function() {
     if (darius.health < 0) {
       game.$winBox.show();
       game.$winBox.html("<p> Gary Wins </p>");
-      game.reset();
+      game.disableBtns(true);
     }
     if (gary.health < 0) {
       game.$winBox.show();
       game.$winBox.html("<p> Gary Wins </p>");
-      game.reset();
+      game.disableBtns(true);
     }
   }
+
+  game.$winBox.click( function() {
+    event.preventDefault();
+    game.$winBox.hide();
+    game.reset();
+  });
   gary.health = 3;
   //Initial Health Bars
   game.garyProgress();
