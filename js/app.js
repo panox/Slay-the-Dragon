@@ -28,7 +28,7 @@ $(function() {
   }
   //Object Instances
   var gary = new Figure('Garry', 100, 3, 10, 5);
-  var darius = new Figure('Darius', 200, 4, 15, 20);
+  var darius = new Figure('Darius', 2, 4, 15, 20);
   //Heal method
   gary.healText = "";
   gary.healing = function(){
@@ -98,7 +98,7 @@ $(function() {
   game.checkWin = function(){
     if (darius.health < 0) {
       game.$winBox.show();
-      game.$winBox.html("<p> Gary Wins </p>");
+      game.$winBox.html("<p> "+ gary.name +" Wins </p>");
       game.disableBtns(true);
     }
     if (gary.health < 0) {
@@ -179,6 +179,7 @@ $(function() {
       });
     },
     moveBack: function () {
+      game.checkWin();
       game.$gary.css( "background-position", "0 0" );
       TweenMax.to(game.$gary, 0.9, {
         onStart: sounds.runSound,
