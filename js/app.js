@@ -138,20 +138,31 @@ $(function() {
     moveForward: function () {
       game.$gary.css("background-position", "0 -150px");
       sounds.runSound();
-      TweenMax.to(game.$gary, 0.9, {
-        left:"190px", 
-        ease:Bounce.easeOut,
-        onComplete: animations.moveBack
-      });
+      var tl = new TimelineLite();
+      tl.add( TweenLite.to(game.$gary, 0.9, {
+        left:"190px",
+        onComplete: attack
+      }) );
+      tl.add( TweenMax.to(game.$gary, 0.9, {
+        onStart: stop,
+        left:"10px",
+      }) );
+      // TweenMax.to(game.$gary, 0.9, {
+      //   left:"190px",
+      //   onComplete: animations.moveForwardComplete
+      // });
     },
-    moveBack: function () {
-      game.$gary.css( "background-position", "0 0" );
-      TweenMax.to(game.$gary, 0.9, {
-        onStart: sounds.runSound,
-        left:"10px", 
-        delay:0.6
-      });
-    },
+    // moveForwardComplete: function() {
+    //   attack();
+    // },
+    // moveBack: function () {
+    //   game.$gary.css( "background-position", "0 0" );
+    //   TweenMax.to(game.$gary, 0.9, {
+    //     onStart: sounds.runSound,
+    //     left:"10px", 
+    //     delay:0.6
+    //   });
+    // },
     fireball: function () {
       game.$flame.css("left", "-150px")
       TweenMax.to(game.$flame, 0.9, {
@@ -205,6 +216,21 @@ $(function() {
     }
   }
 
+  
+  function attack () {
+    mark = $("#gary").sprite({
+      frameWidth: 188, 
+      frameHeight: 172, 
+      sheetWidth: 748,
+      imageSrc:"../assets/knight-attack.png"
+    });
+    mark.sprite("play");
+  }
 
+  function stop () {
+    game.$gary.css( "background-position", "0 0" );
+    mark.sprite("stop");
+  }
+  
   // debugger
 });
