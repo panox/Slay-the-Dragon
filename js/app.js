@@ -1,19 +1,5 @@
 $(function() {
 
-  $('#heroInput').on('keypress',function(e){
-    var heroInput = $('#heroInput').val();
-    var p = e.which;
-    if (p == 13) {
-      event.preventDefault();
-      if (heroInput.length < 6) {
-        var heroName = heroInput || "GARRY";
-        $('#heroName').text(heroName.toUpperCase());
-        $('form').hide();
-        $('.game-bot').show();
-      }
-    }
-  })
-
   //Object Constructor
   function Figure (name, health, minAtk, maxAtk, critChance) {
     this.dmgText = "";
@@ -26,14 +12,14 @@ $(function() {
       if (hit !== 1) {
         if (crit === 1) {
           dmg *= 2
-          this.dmgText = name + " critted " + enemyName.name + " for " + dmg;
+          this.dmgText = this.name + " critted " + enemyName.name + " for " + dmg;
         } 
         else {
-          this.dmgText = name + " attacked " + enemyName.name + " for " + dmg;
+          this.dmgText = this.name + " attacked " + enemyName.name + " for " + dmg;
         }
         enemyName.health -= dmg;
       } else {
-        this.dmgText = name + "'s attack missed!"
+        this.dmgText = this.name + "'s attack missed!"
       }
       //
       // console.log(name + " attacked " + enemyName.name + " for " + dmg)
@@ -41,7 +27,7 @@ $(function() {
     }
   }
   //Object Instances
-  var gary = new Figure(heroName, 100, 3, 10, 5);
+  var gary = new Figure('Garry', 100, 3, 10, 5);
   var darius = new Figure('Darius', 200, 4, 15, 20);
   //Heal method
   gary.healText = "";
@@ -158,6 +144,23 @@ $(function() {
     game.$winBox.hide();
     game.reset();
   });
+
+  //Input
+    $('#heroInput').on('keypress',function(e){
+    var heroInput = $('#heroInput').val();
+    var p = e.which;
+    if (p == 13) {
+      event.preventDefault();
+      if (heroInput.length < 6) {
+        heroName = heroInput || "GARRY";
+        $('#heroName').text(heroName.toUpperCase());
+        $('form').hide();
+        $('.game-bot').show();
+        gary.name = heroInput;
+        console.log(gary.name);
+      }
+    }
+  })
 
   //Animations
   var animations = {
