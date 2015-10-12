@@ -153,10 +153,14 @@ $(function() {
     fireball: function () {
       game.$flame.css("left", "-150px")
       TweenMax.to(game.$flame, 0.9, {
-        onStart: function() {game.$flame.css("opacity", "1")},
+        onStart: animations.fireballStart,
         left: "-320px",
         onComplete: animations.fireballComplete
       });
+    },
+    fireballStart: function () {
+      game.$flame.css("opacity", "1");
+      sounds.fireballSound();
     },
     fireballComplete: function() {
       game.$flame.css("opacity", "0");
