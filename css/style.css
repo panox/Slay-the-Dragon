@@ -91,9 +91,9 @@ h1 {
 }
 #winbox {
   display: none;
-  background-color: blue;
+  background-color: #281622;
   width: 504px;
-  height: 200px;
+  height: 250px;
   position: relative;
   top: -158px;
   z-index: 5;
