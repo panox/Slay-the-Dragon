@@ -91,7 +91,6 @@ $(function() {
     }
   }
 
-  gary.health = 3;
   //Initial Health Bars
   game.garyProgress();
   game.dariusProgress();
