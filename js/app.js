@@ -174,7 +174,7 @@ $(function() {
     url: '/swf/',
     preferFlash: true,
   });
-
+  
   function healSound() {
     var mySound = soundManager.createSound({
       id: "mySound",
