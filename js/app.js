@@ -117,7 +117,7 @@ $(function() {
   //Heal Button
   $('#healBtn').click(function() {
     event.preventDefault();
-    thesound();
+    healSound();
     animations.healAnimation();
     gary.healing();
     game.$actions.prepend('<p>  The Glorious ' + gary.healText + '</p>');
@@ -175,7 +175,7 @@ $(function() {
     preferFlash: true,
   });
 
-  function thesound() {
+  function healSound() {
     var mySound = soundManager.createSound({
       id: "mySound",
       url: "../sounds/heal.wav"
