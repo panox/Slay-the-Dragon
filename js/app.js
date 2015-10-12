@@ -54,6 +54,11 @@ $(function() {
           });
       }
   });
+
+  // CapitalCase
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   
   //Game Object
   var game = {
@@ -145,6 +150,7 @@ $(function() {
     game.reset();
   });
 
+
   //Input
     $('#heroInput').on('keypress',function(e){
     var heroInput = $('#heroInput').val();
@@ -156,8 +162,7 @@ $(function() {
         $('#heroName').text(heroName.toUpperCase());
         $('form').hide();
         $('.game-bot').show();
-        gary.name = heroInput;
-        console.log(gary.name);
+        gary.name = capitalizeFirstLetter(heroInput);
       }
     }
   })
