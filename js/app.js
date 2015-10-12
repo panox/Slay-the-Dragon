@@ -182,6 +182,20 @@ $(function() {
         url: "../sounds/heal.wav"
       });
       mySound.play();
+    },
+    fireballSound: function () {
+      var mySound = soundManager.createSound({
+        id: "mySound",
+        url: "../sounds/fireball.wav"
+      });
+      mySound.play();
+    },
+    hitSound: function () {
+      var mySound = soundManager.createSound({
+        id: "mySound",
+        url: "../sounds/hit.wav"
+      });
+      mySound.play();
     }
   }
 
