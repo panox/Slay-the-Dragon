@@ -28,7 +28,7 @@ $(function() {
   }
   //Object Instances
   var gary = new Figure('Garry', 100, 3, 10, 5);
-  var darius = new Figure('Darius', 2, 4, 15, 20);
+  var darius = new Figure('Darius', 200, 4, 15, 20);
   //Heal method
   gary.healText = "";
   gary.healing = function(){
@@ -62,6 +62,7 @@ $(function() {
   
   //Game Object
   var game = {
+    win: true,
     $actions: $('#actions'),
     $gary: $('#gary'),
     $flame: $('#flame'),
@@ -100,12 +101,17 @@ $(function() {
       game.$winBox.show();
       game.$winBox.html("<p> "+ gary.name +" Wins </p>");
       game.disableBtns(true);
+      game.win = false;
+      return game.win
     }
     if (gary.health < 0) {
       game.$winBox.show();
       game.$winBox.html("<p> Darius Wins </p>");
       game.disableBtns(true);
+      game.win = false;
+      return game.win
     }
+    return game.win
   }
 
   //Initial Health Bars
@@ -128,7 +134,10 @@ $(function() {
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.disableBtns(true);
-    setTimeout(game.enemyTurn, 3000);
+    console.log(game.win)
+    if (game.win) {
+      setTimeout(game.enemyTurn, 3000);
+    }
   });
 
   //Heal Button
