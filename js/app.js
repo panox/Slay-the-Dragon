@@ -2,6 +2,7 @@ $(function() {
 
   //Object Constructor
   function Figure (name, health, minAtk, maxAtk, critChance) {
+    this.damageNum = 0;
     this.dmgText = "";
     this.name = name;
     this.health = health;
@@ -14,18 +15,18 @@ $(function() {
           dmg *= 2
           this.dmgText = this.name + "<span class='crit'> critted </span>" 
           + enemyName.name + " for " + dmg;
+          this.damageNum = dmg;
         } 
         else {
           this.dmgText = this.name + "<span class='attacked'> attacked </span>" 
           + enemyName.name + " for " + dmg;
+          this.damageNum = dmg;
         }
         enemyName.health -= dmg;
-      } else {
+      } 
+      else {
         this.dmgText = this.name + " attack <span class='missed'>missed!</span>"
       }
-      //
-      // console.log(name + " attacked " + enemyName.name + " for " + dmg)
-      // console.log(enemyName.name + "'s Health: " + enemyName.health)
     }
   }
   //Object Instances
@@ -136,7 +137,7 @@ $(function() {
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.disableBtns(true);
-    console.log(game.win)
+    console.log(gary.damageNum); //Console Log Here
     if (game.win) {
       setTimeout(game.enemyTurn, 3000);
     }
@@ -252,5 +253,4 @@ $(function() {
     }
   }
 
-  // debugger
 });

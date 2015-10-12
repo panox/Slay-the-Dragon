@@ -62,6 +62,16 @@ h1 {
   z-index: 3;
 }
 
+#garyDmg {
+  background:rgba(255,255,255, 0.3);
+  border-radius: 38%;
+  height: 60px;
+  width: 70px;
+  position: relative;
+  top: -171px;
+  left: 35px;
+}
+
 
 #darius {
   width: 226px;
