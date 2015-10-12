@@ -1,8 +1,13 @@
 $(function() {
 
-  var heroName =  || "GARRY";
+  $('#heroInput').on('blur', function(){
+    event.preventDefault();
+    var heroName = $('#heroInput').val() || "GARRY";
+    console.log(heroName);
+    $('#heroName').text(heroName);
+  })
+  
   // prompt("Please enter your hero name").toUpperCase() || "GARRY"
-  $('#heroName').text(heroName);
 
   //Object Constructor
   function Figure (name, health, minAtk, maxAtk, critChance) {
