@@ -86,7 +86,7 @@ $(function() {
     }
     if (gary.health < 0) {
       game.$winBox.show();
-      game.$winBox.html("<p> Gary Wins </p>");
+      game.$winBox.html("<p> Darius Wins </p>");
       game.disableBtns(true);
     }
   }
