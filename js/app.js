@@ -1,22 +1,29 @@
 $(function() {
 
   //Object Constructor
-  function Figure (name, health, minAtk, maxAtk) {
+  function Figure (name, health, minAtk, maxAtk, critChance) {
     this.dmgText = "";
     this.name = name;
     this.health = health;
     this.damage = function(enemyName){
       var dmg = Math.floor(Math.random() * (maxAtk - minAtk)) + minAtk;
+      var crit = Math.floor(Math.random() * (critChance - 1)) + 1;
+      if (crit === 1) {
+        dmg *= 2
+        this.dmgText = name + " critted " + enemyName.name + " for " + dmg;
+      } else {
+        this.dmgText = name + " attacked " + enemyName.name + " for " + dmg;
+      }
       enemyName.health -= dmg;
-      this.dmgText = name + " attacked " + enemyName.name + " for " + dmg;
+      
       //
       // console.log(name + " attacked " + enemyName.name + " for " + dmg)
       // console.log(enemyName.name + "'s Health: " + enemyName.health)
     }
   }
   //Object Instances
-  var gary = new Figure('Gary', 100, 3, 10);
-  var darius = new Figure('Darius', 200, 4, 15);
+  var gary = new Figure('Gary', 100, 3, 10, 5);
+  var darius = new Figure('Darius', 200, 4, 15, 20);
   //Heal method
   gary.healText = "";
   gary.healing = function(){
