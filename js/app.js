@@ -74,6 +74,7 @@ $(function() {
     game.$actions.html("");
     game.garyProgress();
     game.dariusProgress();
+    game.$gary.css("background-position", "0 -150px");
     game.disableBtns(false)
   }
 

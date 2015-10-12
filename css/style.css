@@ -43,6 +43,7 @@ h1 {
 }
 
 .game {
+  /* http://www.spriters-resource.com/ */
   background-image: url(../assets/background.jpg);
   width: 504px;
   height: 303px;
@@ -51,6 +52,7 @@ h1 {
 #gary {
   width: 167px;
   height: 128px;
+  /* http://www.spriters-resource.com/ */
   background-image: url(../assets/knight.png);
   background-position: 0 -150px;
   position: relative;
@@ -64,6 +66,7 @@ h1 {
 #darius {
   width: 226px;
   height: 204px;
+  /* www.spriters-resource.com Barubary */
   background-image: url(../assets/dragon.png);
   background-position: 0 0;
   position: relative;
