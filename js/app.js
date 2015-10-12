@@ -49,6 +49,7 @@ $(function() {
     $gary: $('#gary'),
     $flame: $('#flame'),
     $healStar: $('#healStar'),
+    $winBox: $('#winbox'),
     progress: function(percent, $element) {
         var progressBarWidth = percent * $element.width() / 100;
         $element.find('div').animate({ width: progressBarWidth }, 500)
@@ -77,15 +78,17 @@ $(function() {
 
   game.checkWin = function(){
     if (darius.health < 0) {
-      alert("Gary Wins");
+      game.$winBox.show();
+      game.$winBox.html("<p> Gary Wins </p>");
       game.reset();
     }
     if (gary.health < 0) {
-      alert("Gary Wins");
+      game.$winBox.show();
+      game.$winBox.html("<p> Gary Wins </p>");
       game.reset();
     }
   }
-
+  gary.health = 3;
   //Initial Health Bars
   game.garyProgress();
   game.dariusProgress();

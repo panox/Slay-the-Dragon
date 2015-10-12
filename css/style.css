@@ -94,15 +94,17 @@ h1 {
   /* Background pattern from subtlepatterns.com */
   background: url(../assets/dark_embroidery.png);
   width: 504px;
-  height: 250px;
+  height: 60px;
   position: relative;
   top: -158px;
   z-index: 5;
 }
 
 #winbox p {
+  color: #D33D2B;
   font-size: 40px;
   text-align: center;
+  text-shadow: 1px 1px 1px #ccc;
 }
 
 
