@@ -117,6 +117,7 @@ $(function() {
   //Heal Button
   $('#healBtn').click(function() {
     event.preventDefault();
+    thesound();
     animations.healAnimation();
     gary.healing();
     game.$actions.prepend('<p>  The Glorious ' + gary.healText + '</p>');
@@ -166,6 +167,20 @@ $(function() {
         repeat:1, repeatDelay:0.5, yoyo:true
       });
     }
+  }
+
+  //Sounds
+  soundManager.setup({
+    url: '/swf/',
+    preferFlash: true,
+  });
+
+  function thesound() {
+    var mySound = soundManager.createSound({
+      id: "mySound",
+      url: "../sounds/heal.wav"
+    });
+    mySound.play();
   }
 
   // debugger
