@@ -74,6 +74,7 @@ $(function() {
     game.$actions.html("");
     game.garyProgress();
     game.dariusProgress();
+    game.disableBtns(false)
   }
 
   game.checkWin = function(){
@@ -89,11 +90,6 @@ $(function() {
     }
   }
 
-  game.$winBox.click( function() {
-    event.preventDefault();
-    game.$winBox.hide();
-    game.reset();
-  });
   gary.health = 3;
   //Initial Health Bars
   game.garyProgress();
@@ -128,6 +124,14 @@ $(function() {
     game.disableBtns(true);
     setTimeout(game.enemyTurn, 3000);
   });
+
+  //Winbox Click
+  game.$winBox.click( function() {
+    event.preventDefault();
+    game.$winBox.hide();
+    game.reset();
+  });
+
   //Animations
   var animations = {
     moveForward: function () {
