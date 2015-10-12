@@ -137,6 +137,7 @@ $(function() {
   var animations = {
     moveForward: function () {
       game.$gary.css("background-position", "0 -150px");
+      sounds.runSound();
       TweenMax.to(game.$gary, 0.9, {
         left:"190px", 
         ease:Bounce.easeOut,
@@ -146,6 +147,7 @@ $(function() {
     moveBack: function () {
       game.$gary.css( "background-position", "0 0" );
       TweenMax.to(game.$gary, 0.9, {
+        onStart: sounds.runSound,
         left:"10px", 
         delay:0.6
       });
@@ -197,7 +199,7 @@ $(function() {
     runSound: function () {
       var mySound = soundManager.createSound({
         id: "run",
-        url: "../sounds/hit.wav"
+        url: "../sounds/horses.mp3",
       });
       mySound.play();
     }
