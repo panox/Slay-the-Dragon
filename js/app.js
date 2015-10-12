@@ -6,17 +6,21 @@ $(function() {
     this.name = name;
     this.health = health;
     this.damage = function(enemyName){
+      var hit = Math.floor(Math.random() * (4 - 1)) + 1;
       var dmg = Math.floor(Math.random() * (maxAtk - minAtk)) + minAtk;
       var crit = Math.floor(Math.random() * (critChance - 1)) + 1;
-      if (crit === 1) {
-        dmg *= 2
-        this.dmgText = name + " critted " + enemyName.name + " for " + dmg;
-      } 
-      else {
-        this.dmgText = name + " attacked " + enemyName.name + " for " + dmg;
+      if (hit !== 1) {
+        if (crit === 1) {
+          dmg *= 2
+          this.dmgText = name + " critted " + enemyName.name + " for " + dmg;
+        } 
+        else {
+          this.dmgText = name + " attacked " + enemyName.name + " for " + dmg;
+        }
+        enemyName.health -= dmg;
+      } else {
+        this.dmgText = name + "'s attack missed!"
       }
-      enemyName.health -= dmg;
-      
       //
       // console.log(name + " attacked " + enemyName.name + " for " + dmg)
       // console.log(enemyName.name + "'s Health: " + enemyName.health)
