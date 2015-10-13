@@ -162,11 +162,14 @@ footer {
 }
 
 .attacked {
-  color: #25947E;
+  color: #57518F;
 }
 .missed {
   color: #CAA13C;
 }
 .crit {
   color: #D33D2B;
+}
+.heal {
+  color: #25947E;
 }

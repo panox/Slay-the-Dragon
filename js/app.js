@@ -26,6 +26,7 @@ $(function() {
       } 
       else {
         this.dmgText = this.name + " attack <span class='missed'>missed!</span>"
+        this.damageNum = 0;
       }
     }
   }
@@ -43,8 +44,8 @@ $(function() {
     } else {
       gary.health += heal;
     }
-    this.healText = this.name + " healed himself for " + heal;
-    //
+    this.healText = this.name + 
+    " <span class='heal'> healed </span>himself for " + heal;
     // console.log("Healing for: " + heal);
     // console.log("Gary's health is: " + gary.health)
   }
