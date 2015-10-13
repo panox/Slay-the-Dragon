@@ -188,16 +188,15 @@ $(function() {
   })
 
   //Animations
-  var totalFrames = 4;
-  var frameWidth = 186;
-  var speed = 0.9;
-  var finalPosition = '-' + (frameWidth * totalFrames) + 'px 0px';
-  var svgTL = new TimelineMax() 
-  var svgEase = new SteppedEase(totalFrames);
-
 
   var animations = {
     attackAnimation: function () {
+      var totalFrames = 4;
+      var frameWidth = 186;
+      var speed = 0.9;
+      var finalPosition = '-' + (frameWidth * totalFrames) + 'px 0px';
+      var svgTL = new TimelineMax() 
+      var svgEase = new SteppedEase(totalFrames);
       $('#gary').css("background-position", "0 0");
       svgTL.to('#gary', 0.9, {
         left:"190px"
