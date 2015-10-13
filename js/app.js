@@ -243,12 +243,19 @@ $(function() {
   }
 
   //Sounds
-  soundManager.setup({
-    url: '/swf/',
-    preferFlash: true,
-  });
 
   var sounds = {
+    timeAttack: function () {
+      var mySound = soundManager.createSound({
+        id: "background",
+        url: "../sounds/background.wav"
+      });
+      mySound.play({
+        onfinish: function() {
+          sounds.timeAttack(mySound);
+        }
+      });
+    },
     healSound: function () {
       var mySound = soundManager.createSound({
         id: "heal",
@@ -266,11 +273,17 @@ $(function() {
     attackSound: function () {
       var mySound = soundManager.createSound({
         id: "attack",
-        url: "../sounds/horses.mp3",
+        url: "../sounds/sword.mp3",
       });
       mySound.play();
     }
   }
+
+  soundManager.setup({
+    url: '/swf/',
+    preferFlash: true,
+    onready: sounds.timeAttack
+  });
 
 
 });
