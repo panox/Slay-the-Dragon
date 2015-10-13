@@ -100,18 +100,17 @@ $(function() {
   }
 
   game.checkWin = function(){
-    if (darius.health < 0) {
+    if (darius.health < 1) {
       game.$winBox.show();
       game.$winBox.html("<p> "+ gary.name +" Wins </p>");
       game.win = true;
     }
-    if (gary.health < 0) {
+    if (gary.health < 1) {
       game.$winBox.show();
       game.$winBox.html("<p> Darius Wins </p>");
       game.win = true;
     }
   }
-
   //Initial Health Bars
   game.garyProgress();
   game.dariusProgress();
