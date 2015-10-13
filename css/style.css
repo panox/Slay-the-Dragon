@@ -50,11 +50,10 @@ h1 {
 }
 
 #gary {
-  width: 167px;
-  height: 128px;
-  /* http://www.spriters-resource.com/ */
-  background-image: url(../assets/knight.png);
-  background-position: 0 -150px;
+  /*http://www.spriters-resource.com/ */
+  background: url('../assets/knight2.png');
+  width: 186px;
+  height: 172px;
   position: relative;
   display: inline-block;
   top: 88px;
@@ -71,7 +70,7 @@ h1 {
   position: relative;
   display: inline-block;
   top: 100px;
-  left: 107px;
+  left: 89px;
   z-index: 2;
 }
 
@@ -186,11 +185,4 @@ footer {
 }
 .heal {
   color: #25947E;
-}
-
-#test {
-  background: url('../assets/knight2.png');
-  width: 186px;
-  height: 172px;
-  position: relative;
 }

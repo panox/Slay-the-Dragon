@@ -137,7 +137,7 @@ $(function() {
   //Attack Button
   $('#attackBtn').click(function() {
     event.preventDefault();
-    animations.moveForward();
+    attackAnimation();
     gary.damage(darius);
     game.showNum('#dariusDmg', gary.damageNum);
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
@@ -145,7 +145,7 @@ $(function() {
     game.checkWin();
     game.disableBtns(true);
     if (!game.win) {
-      setTimeout(game.enemyTurn, 3000);
+      setTimeout(game.enemyTurn, 3900);
     }
     
   });
@@ -259,7 +259,7 @@ $(function() {
       mySound.play();
     }
   }
-
+  
   var totalFrames = 4;
   var frameWidth = 186;
   var speed = 0.9;
@@ -267,19 +267,18 @@ $(function() {
   var svgTL = new TimelineMax() 
   var svgEase = new SteppedEase(totalFrames);
 
-  $('#testbutton').on('click', attackAnimation);
   function attackAnimation () {
-    $('#test').css("background-position", "0 0");
-    svgTL.to('#test', 0.9, {left:"190px"});
-    svgTL.to('#test', speed, {
+    $('#gary').css("background-position", "0 0");
+    svgTL.to('#gary', 0.9, {left:"190px"});
+    svgTL.to('#gary', speed, {
       backgroundPosition: finalPosition,
       ease: svgEase,
       onComplete: changeBack
     });
   }
   function changeBack () {
-    $('#test').css("background-position", "0px 166px");
-    TweenMax.to('#test', 0.9, {
+    $('#gary').css("background-position", "0px 166px");
+    TweenMax.to('#gary', 0.9, {
       onStart: sounds.runSound,
       left:"10px", 
       delay:0.6
