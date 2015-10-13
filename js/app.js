@@ -243,7 +243,6 @@ $(function() {
   }
 
   //Sounds
-
   var sounds = {
     timeAttack: function () {
       var mySound = soundManager.createSound({
