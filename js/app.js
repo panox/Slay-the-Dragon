@@ -142,6 +142,13 @@ $(function() {
     game.checkWin();
     game.disableBtns(true);
   }
+  game.playerHealTurn = function () {
+    gary.healing();
+    game.showNum('#garyDmg', gary.healNum);
+    game.$actions.prepend('<p>  The Glorious ' + gary.healText + '</p>');
+    game.garyProgress();
+    game.disableBtns(true);
+  }
 
   //Attack Button
   $('#attackBtn').click(function() {
@@ -157,12 +164,7 @@ $(function() {
     event.preventDefault();
     sounds.healSound();
     animations.healAnimation();
-    gary.healing();
-    game.showNum('#garyDmg', gary.healNum);
-    game.$actions.prepend('<p>  The Glorious ' + gary.healText + '</p>');
-    game.garyProgress();
-    game.disableBtns(true);
-    setTimeout(game.enemyTurn, 3000);
+    setTimeout(game.enemyTurn, 4400);
   });
 
   //Winbox Click
@@ -237,7 +239,10 @@ $(function() {
     },
     healAnimation: function () {
       TweenMax.to(game.$healStar, 0.8, {opacity:"1",
-        repeat:1, repeatDelay:0.5, yoyo:true
+        repeat:1, 
+        repeatDelay:0.5, 
+        yoyo:true,
+        onComplete: game.playerHealTurn
       });
     }
   }
