@@ -124,7 +124,7 @@ $(function() {
   game.garyProgress();
   game.dariusProgress();
  
-  function showNum (element, number) {
+  game.showNum = function (element, number) {
     $(element).text(number).css("opacity", "1").delay(700).fadeTo(900, 0);
   }
 
@@ -132,7 +132,7 @@ $(function() {
   game.enemyTurn = function(){
     animations.fireball();
     darius.damage(gary);
-    showNum('#garyDmg', darius.damageNum);
+    game.showNum('#garyDmg', darius.damageNum);
     game.$actions.prepend('<p> The Terrible ' + darius.dmgText + '</p>');
     game.garyProgress();
     
@@ -142,7 +142,7 @@ $(function() {
     event.preventDefault();
     animations.moveForward();
     gary.damage(darius);
-    showNum('#dariusDmg', gary.damageNum);
+    game.showNum('#dariusDmg', gary.damageNum);
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.disableBtns(true);
@@ -158,7 +158,7 @@ $(function() {
     sounds.healSound();
     animations.healAnimation();
     gary.healing();
-    $('#garyDmg').text(gary.healNum).show().delay(900).fadeOut( "slow" );
+    game.showNum('#garyDmg', gary.healNum);
     game.$actions.prepend('<p>  The Glorious ' + gary.healText + '</p>');
     game.garyProgress();
     game.disableBtns(true);
