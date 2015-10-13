@@ -48,8 +48,6 @@ $(function() {
     this.healText = this.name + 
     " <span class='heal'> healed </span>himself for " + heal;
     gary.healNum = '+' + heal;
-    // console.log("Healing for: " + heal);
-    // console.log("Gary's health is: " + gary.health)
   }
 
   // Disable function
@@ -108,7 +106,6 @@ $(function() {
       game.$winBox.show();
       game.$winBox.html("<p> "+ gary.name +" Wins </p>");
       game.win = true;
-      console.log(game.win)
     }
     if (gary.health < 0) {
       game.$winBox.show();
@@ -191,7 +188,6 @@ $(function() {
   })
 
   //Animations
-
   var animations = {
     attackAnimation: function () {
       var totalFrames = 4;
@@ -233,10 +229,7 @@ $(function() {
     },
     fireballComplete: function() {
       game.$flame.css("opacity", "0");
-
       game.enemyTurn();
-
-
       game.checkWin();
       game.disableBtns(false);
     },
