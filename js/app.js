@@ -140,19 +140,18 @@ $(function() {
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.checkWin();
-    game.disableBtns(true);
   }
   game.playerHealTurn = function () {
     gary.healing();
     game.showNum('#garyDmg', gary.healNum);
     game.$actions.prepend('<p>  The Glorious ' + gary.healText + '</p>');
     game.garyProgress();
-    game.disableBtns(true);
   }
 
   //Attack Button
   $('#attackBtn').click(function() {
     event.preventDefault();
+    game.disableBtns(true);
     animations.attackAnimation();
     if (!game.win) {
       setTimeout(game.enemyTurn, 3900);
@@ -162,6 +161,7 @@ $(function() {
   //Heal Button
   $('#healBtn').click(function() {
     event.preventDefault();
+    game.disableBtns(true);
     sounds.healSound();
     animations.healAnimation();
     setTimeout(game.enemyTurn, 4400);
