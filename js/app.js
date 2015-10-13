@@ -2,7 +2,7 @@ $(function() {
 
   //Object Constructor
   function Figure (name, health, minAtk, maxAtk, critChance) {
-    this.damageNum = 0;
+    this.damageNum;
     this.dmgText = "";
     this.name = name;
     this.health = health;
@@ -15,12 +15,12 @@ $(function() {
           dmg *= 2
           this.dmgText = this.name + "<span class='crit'> critted </span>" 
           + enemyName.name + " for " + dmg;
-          this.damageNum = dmg;
+          this.damageNum = "- " + dmg;
         } 
         else {
           this.dmgText = this.name + "<span class='attacked'> attacked </span>" 
           + enemyName.name + " for " + dmg;
-          this.damageNum = dmg;
+          this.damageNum = "- " + dmg;
         }
         enemyName.health -= dmg;
       } 
@@ -126,6 +126,7 @@ $(function() {
   game.enemyTurn = function(){
     animations.fireball();
     darius.damage(gary);
+    $('#garyDmg').html(darius.damageNum).show().delay(900).fadeOut( "slow" );
     game.$actions.prepend('<p> The Terrible ' + darius.dmgText + '</p>');
     game.garyProgress();
     
@@ -135,7 +136,6 @@ $(function() {
     event.preventDefault();
     animations.moveForward();
     gary.damage(darius);
-    $('#garyDmg').html(gary.damageNum).show().delay(900).fadeOut( "slow" );
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.disableBtns(true);
