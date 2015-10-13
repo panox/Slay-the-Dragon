@@ -63,7 +63,7 @@ $(function() {
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-  
+
   //Game Object
   var game = {
     win: false,
@@ -73,9 +73,8 @@ $(function() {
     $healStar: $('#healStar'),
     $winBox: $('#winbox'),
     progress: function(percent, $element) {
-        var progressBarWidth = percent * $element.width() / 100;
-        $element.find('div').animate({ width: progressBarWidth }, 500)
-        //text(percent + "% ");
+      var progressBarWidth = percent * $element.width() / 100;
+      $element.find('div').animate({ width: progressBarWidth }, 500)
     },
     garyProgress: function() {
       game.progress(gary.health, $('#hero-health'));
@@ -284,6 +283,5 @@ $(function() {
     preferFlash: true,
     onready: sounds.timeAttack
   });
-
 
 });
