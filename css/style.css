@@ -62,20 +62,6 @@ h1 {
   z-index: 3;
 }
 
-#garyDmg {
-  color: white;
-  text-align: center;
-  font-size: 40px;
-/*  background:rgba(255,255,255, 0.3);*/
-  text-shadow: 4px 1px 1px #000;
-  border-radius: 38%;
-  height: 60px;
-  width: 70px;
-  position: relative;
-  top: -171px;
-  left: 126px;
-}
-
 #darius {
   width: 226px;
   height: 204px;
@@ -89,18 +75,33 @@ h1 {
   z-index: 2;
 }
 
+#garyDmg {
+  opacity: 0;
+  vertical-align:top;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 4px 1px 1px #000;
+  height: 60px;
+  width: 70px;
+  position: relative;
+  top: -171px;
+  left: 126px;
+}
+
 #dariusDmg {
-    color: white;
-    text-align: center;
-    font-size: 40px;
-  /*  background:rgba(255,255,255, 0.3);*/
-    text-shadow: 4px 1px 1px #000;
-    border-radius: 38%;
-    height: 60px;
-    width: 70px;
-    position: relative;
-    top: -231px;
-    left: 246px;
+  opacity: 0;
+  vertical-align:top;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 4px 1px 1px #000;
+  height: 60px;
+  width: 70px;
+  position: relative;
+  top: -228px;
+  left: 246px;
+  display: inline-block;
 }
 
 #flame {
