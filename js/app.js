@@ -35,6 +35,7 @@ $(function() {
   var darius = new Figure('Darius', 200, 4, 15, 20);
   //Heal method
   gary.healText = "";
+  gary.healNum = "";
   gary.healing = function(){
     var maxHeal = 20;
     var minHeal = 8;
@@ -46,6 +47,7 @@ $(function() {
     }
     this.healText = this.name + 
     " <span class='heal'> healed </span>himself for " + heal;
+    gary.healNum = '+' + heal;
     // console.log("Healing for: " + heal);
     // console.log("Gary's health is: " + gary.health)
   }
@@ -136,6 +138,7 @@ $(function() {
     event.preventDefault();
     animations.moveForward();
     gary.damage(darius);
+    $('#dariusDmg').html(gary.damageNum).show().delay(900).fadeOut( "slow" );
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.disableBtns(true);
@@ -151,6 +154,7 @@ $(function() {
     sounds.healSound();
     animations.healAnimation();
     gary.healing();
+    $('#garyDmg').html(gary.healNum).show().delay(900).fadeOut( "slow" );
     game.$actions.prepend('<p>  The Glorious ' + gary.healText + '</p>');
     game.garyProgress();
     game.disableBtns(true);
