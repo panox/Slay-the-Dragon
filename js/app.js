@@ -127,7 +127,6 @@ $(function() {
 
   //Enemy Turn
   game.enemyTurn = function(){
-    animations.fireball();
     darius.damage(gary);
     game.showNum('#garyDmg', darius.damageNum);
     game.$actions.prepend('<p> The Terrible ' + darius.dmgText + '</p>');
@@ -154,7 +153,7 @@ $(function() {
     game.disableBtns(true);
     animations.attackAnimation();
     if (!game.win) {
-      setTimeout(game.enemyTurn, 3900);
+      setTimeout(animations.fireball, 3900);
     }
   });
 
@@ -164,7 +163,7 @@ $(function() {
     game.disableBtns(true);
     sounds.healSound();
     animations.healAnimation();
-    setTimeout(game.enemyTurn, 4400);
+    setTimeout(animations.fireball, 4400);
   });
 
   //Winbox Click
@@ -234,6 +233,10 @@ $(function() {
     },
     fireballComplete: function() {
       game.$flame.css("opacity", "0");
+
+      game.enemyTurn();
+
+
       game.checkWin();
       game.disableBtns(false);
     },
