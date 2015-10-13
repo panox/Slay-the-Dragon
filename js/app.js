@@ -68,7 +68,7 @@ $(function() {
   
   //Game Object
   var game = {
-    win: true,
+    win: false,
     $actions: $('#actions'),
     $gary: $('#gary'),
     $flame: $('#flame'),
@@ -99,33 +99,31 @@ $(function() {
     game.garyProgress();
     game.dariusProgress();
     game.$gary.css("background-position", "0 -150px");
-    game.disableBtns(false)
+    game.win = false;
+    game.disableBtns(false);
   }
 
   game.checkWin = function(){
     if (darius.health < 0) {
       game.$winBox.show();
       game.$winBox.html("<p> "+ gary.name +" Wins </p>");
-      game.disableBtns(true);
-      game.win = false;
-      return game.win
+      game.win = true;
+      console.log(game.win)
     }
     if (gary.health < 0) {
       game.$winBox.show();
       game.$winBox.html("<p> Darius Wins </p>");
-      game.disableBtns(true);
-      game.win = false;
-      return game.win
+      game.win = true;
     }
-    return game.win
   }
 
+  darius.health = 3;
   //Initial Health Bars
   game.garyProgress();
   game.dariusProgress();
  
   game.showNum = function (element, number) {
-    $(element).text(number).css("opacity", "1").delay(700).fadeTo(900, 0);
+    $(element).html(number).css("opacity", "1").delay(700).fadeTo(900, 0);
   }
 
   //Enemy Turn
@@ -145,11 +143,12 @@ $(function() {
     game.showNum('#dariusDmg', gary.damageNum);
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
+    game.checkWin();
     game.disableBtns(true);
-    console.log(gary.damageNum); //Console Log Here
-    if (game.win) {
+    if (!game.win) {
       setTimeout(game.enemyTurn, 3000);
     }
+    
   });
 
   //Heal Button
@@ -201,7 +200,6 @@ $(function() {
       });
     },
     moveBack: function () {
-      game.checkWin();
       game.$gary.css( "background-position", "0 0" );
       TweenMax.to(game.$gary, 0.9, {
         onStart: sounds.runSound,
