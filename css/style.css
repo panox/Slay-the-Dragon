@@ -187,3 +187,10 @@ footer {
 .heal {
   color: #25947E;
 }
+
+#test {
+  background: url('../assets/knight2.png');
+  width: 186px;
+  height: 172px;
+  position: relative;
+}

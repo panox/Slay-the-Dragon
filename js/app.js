@@ -260,4 +260,30 @@ $(function() {
     }
   }
 
+  var totalFrames = 4;
+  var frameWidth = 186;
+  var speed = 0.9;
+  var finalPosition = '-' + (frameWidth * totalFrames) + 'px 0px';
+  var svgTL = new TimelineMax() 
+  var svgEase = new SteppedEase(totalFrames);
+
+  $('#testbutton').on('click', attackAnimation);
+  function attackAnimation () {
+    $('#test').css("background-position", "0 0");
+    svgTL.to('#test', 0.9, {left:"190px"});
+    svgTL.to('#test', speed, {
+      backgroundPosition: finalPosition,
+      ease: svgEase,
+      onComplete: changeBack
+    });
+  }
+  function changeBack () {
+    $('#test').css("background-position", "0px 166px");
+    TweenMax.to('#test', 0.9, {
+      onStart: sounds.runSound,
+      left:"10px", 
+      delay:0.6
+    });
+  }
+
 });
