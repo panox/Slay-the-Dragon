@@ -134,20 +134,22 @@ $(function() {
     game.garyProgress();
     
   }
-  //Attack Button
-  $('#attackBtn').click(function() {
-    event.preventDefault();
-    animations.attackAnimation();
+  game.playerAttackTurn = function () {
     gary.damage(darius);
     game.showNum('#dariusDmg', gary.damageNum);
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.checkWin();
     game.disableBtns(true);
+  }
+
+  //Attack Button
+  $('#attackBtn').click(function() {
+    event.preventDefault();
+    animations.attackAnimation();
     if (!game.win) {
       setTimeout(game.enemyTurn, 3900);
     }
-    
   });
 
   //Heal Button
@@ -199,7 +201,7 @@ $(function() {
       var svgEase = new SteppedEase(totalFrames);
       $('#gary').css("background-position", "0 0");
       svgTL.to('#gary', 0.9, {
-        left:"190px"
+        left:"190px",
       });
       svgTL.to('#gary', speed, {
         onStart: sounds.attackSound,
@@ -209,6 +211,7 @@ $(function() {
       });
     },
     changeBack: function () {
+      game.playerAttackTurn();
       $('#gary').css("background-position", "0px 166px");
       TweenMax.to('#gary', 0.9, {
         left:"10px", 
