@@ -98,9 +98,10 @@ h1 {
   height: 60px;
   width: 70px;
   position: relative;
-  top: -228px;
-  left: 246px;
+  top: -198px;
+  left: 306px;
   display: inline-block;
+  z-index: 5;
 }
 
 #flame {
