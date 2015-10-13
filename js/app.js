@@ -137,7 +137,7 @@ $(function() {
   //Attack Button
   $('#attackBtn').click(function() {
     event.preventDefault();
-    attackAnimation();
+    animations.attackAnimation();
     gary.damage(darius);
     game.showNum('#dariusDmg', gary.damageNum);
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
@@ -188,20 +188,30 @@ $(function() {
   })
 
   //Animations
+  var totalFrames = 4;
+  var frameWidth = 186;
+  var speed = 0.9;
+  var finalPosition = '-' + (frameWidth * totalFrames) + 'px 0px';
+  var svgTL = new TimelineMax() 
+  var svgEase = new SteppedEase(totalFrames);
+
+
   var animations = {
-    moveForward: function () {
-      game.$gary.css("background-position", "0 -150px");
-      sounds.runSound();
-      TweenMax.to(game.$gary, 0.9, {
-        left:"190px", 
-        ease:Bounce.easeOut,
-        onComplete: animations.moveBack
+    attackAnimation: function () {
+      $('#gary').css("background-position", "0 0");
+      svgTL.to('#gary', 0.9, {
+        left:"190px"
+      });
+      svgTL.to('#gary', speed, {
+        onStart: sounds.attackSound,
+        backgroundPosition: finalPosition,
+        ease: svgEase,
+        onComplete: animations.changeBack
       });
     },
-    moveBack: function () {
-      game.$gary.css( "background-position", "0 0" );
-      TweenMax.to(game.$gary, 0.9, {
-        onStart: sounds.runSound,
+    changeBack: function () {
+      $('#gary').css("background-position", "0px 166px");
+      TweenMax.to('#gary', 0.9, {
         left:"10px", 
         delay:0.6
       });
@@ -251,38 +261,14 @@ $(function() {
       });
       mySound.play();
     },
-    runSound: function () {
+    attackSound: function () {
       var mySound = soundManager.createSound({
-        id: "run",
+        id: "attack",
         url: "../sounds/horses.mp3",
       });
       mySound.play();
     }
   }
-  
-  var totalFrames = 4;
-  var frameWidth = 186;
-  var speed = 0.9;
-  var finalPosition = '-' + (frameWidth * totalFrames) + 'px 0px';
-  var svgTL = new TimelineMax() 
-  var svgEase = new SteppedEase(totalFrames);
 
-  function attackAnimation () {
-    $('#gary').css("background-position", "0 0");
-    svgTL.to('#gary', 0.9, {left:"190px"});
-    svgTL.to('#gary', speed, {
-      backgroundPosition: finalPosition,
-      ease: svgEase,
-      onComplete: changeBack
-    });
-  }
-  function changeBack () {
-    $('#gary').css("background-position", "0px 166px");
-    TweenMax.to('#gary', 0.9, {
-      onStart: sounds.runSound,
-      left:"10px", 
-      delay:0.6
-    });
-  }
 
 });
