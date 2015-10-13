@@ -95,7 +95,6 @@ $(function() {
     game.$actions.html("");
     game.garyProgress();
     game.dariusProgress();
-    game.$gary.css("background-position", "0 -150px");
     game.win = false;
     game.disableBtns(false);
   }
@@ -135,6 +134,9 @@ $(function() {
     game.$actions.prepend('<p> The Glorious ' + gary.dmgText + '</p>');
     game.dariusProgress();
     game.checkWin();
+    if (!game.win) {
+      setTimeout(animations.fireball, 2200);
+    }
   }
   game.playerHealTurn = function () {
     gary.healing();
@@ -148,9 +150,6 @@ $(function() {
     event.preventDefault();
     game.disableBtns(true);
     animations.attackAnimation();
-    if (!game.win) {
-      setTimeout(animations.fireball, 4100);
-    }
   });
 
   //Heal Button
