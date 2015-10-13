@@ -149,7 +149,7 @@ $(function() {
     game.disableBtns(true);
     animations.attackAnimation();
     if (!game.win) {
-      setTimeout(animations.fireball, 3900);
+      setTimeout(animations.fireball, 4100);
     }
   });
 
@@ -159,7 +159,7 @@ $(function() {
     game.disableBtns(true);
     sounds.healSound();
     animations.healAnimation();
-    setTimeout(animations.fireball, 4400);
+    setTimeout(animations.fireball, 4300);
   });
 
   //Winbox Click
@@ -211,8 +211,12 @@ $(function() {
       $('#gary').css("background-position", "0px 166px");
       TweenMax.to('#gary', 0.9, {
         left:"10px", 
-        delay:0.6
+        delay:0.6,
+        onComplete: animations.changeFront
       });
+    },
+    changeFront: function () {
+      $('#gary').css("background-position", "0 0");
     },
     fireball: function () {
       game.$flame.css("left", "-150px")
@@ -235,7 +239,7 @@ $(function() {
     healAnimation: function () {
       TweenMax.to(game.$healStar, 0.8, {opacity:"1",
         repeat:1, 
-        repeatDelay:0.5, 
+        repeatDelay:0.3, 
         yoyo:true,
         onComplete: game.playerHealTurn
       });
