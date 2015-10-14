@@ -6,20 +6,20 @@ The user has two choices attacking or healing
 Url: https://secret-plateau-7340.herokuapp.com/
 
 
-### Plugins Used
+#### Plugins Used
 * Jquery
 * Greensock
 * Soundmanager
 
-### Credits 
+#### Credits 
 * http://www.spriters-resource.com/
 * http://subtlepatterns.com/
 * http://www.freesfx.co.uk/
 
 ### what was a win
 
-* after a lot of trial and error making the whole thing work
-* going back on previous commits after new features did not work 
+* After a lot of trial and error making the whole thing work
+* Going back on previous commits after new features did not work 
 
 ### what you've been struggling with
 
